@@ -9,3 +9,9 @@ ThreadPool.h
 使用condition_variable 以及unique_lock
 
 
+# v0.2
+ 实现基于套接字的基础网络echo服务(开放本地端口9001)
+ 实现单线程的基础echo通信
+ 实现accpet阻塞前的基础包装
+ 
+ 

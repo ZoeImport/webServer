@@ -4,13 +4,17 @@
 
 #include "threadPool/Thread.h"
 
-int main() {
-  ThreadPool threads(10);
-  for (auto index = 0; index < 100000; ++index) {
+#include "socket/server.h"
 
-    threads.enQueue([index] {
-      std::cout  << index << std::endl;
-      // std::this_thread::sleep_for(std::chrono::milliseconds(500));
-    });
-  }
+int main() {
+  // ThreadPool threads(5);
+  // for (auto index = 0; index < 100; ++index) {
+
+  //   threads.enQueue([index](int a) {
+  //     std::cout  <<"第"<< index <<"次"<< std::endl;
+  //     std::this_thread::sleep_for(std::chrono::milliseconds(10));
+  //   },index);
+  // }
+  Server server(9001);
+  server.accept_connect();
 }

@@ -8,6 +8,8 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build)
 
 add_executable(output main.cpp)
 add_subdirectory(threadPool)
+add_subdirectory(socket)
 
 
-target_link_libraries(output thread_pool)
+target_link_libraries(output threadpooll)
+target_link_libraries(output serverl)

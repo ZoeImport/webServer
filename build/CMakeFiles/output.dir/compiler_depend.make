@@ -230,8 +230,45 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
-  /usr/include/c++/11/bits/stl_queue.h
+  /usr/include/c++/11/bits/stl_queue.h \
+  ../socket/server.h \
+  /usr/include/arpa/inet.h \
+  /usr/include/netinet/in.h \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/asm-generic/sockios.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h
 
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+
+/usr/include/x86_64-linux-gnu/sys/socket.h:
+
+../socket/server.h:
 
 /usr/include/c++/11/bits/stl_deque.h:
 
@@ -241,7 +278,11 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/stl_algo.h:
 
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
 /usr/include/c++/11/bits/vector.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
 
 /usr/include/c++/11/bits/stl_bvector.h:
 
@@ -274,6 +315,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/istream.tcc:
 
 /usr/include/c++/11/istream:
+
+/usr/include/asm-generic/sockios.h:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
 
@@ -345,6 +388,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
 /usr/include/stdlib.h:
 
 /usr/include/c++/11/bits/functional_hash.h:
@@ -391,6 +436,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
+/usr/include/x86_64-linux-gnu/bits/in.h:
+
 /usr/include/c++/11/cstdlib:
 
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
@@ -423,6 +470,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/postypes.h:
 
+/usr/include/arpa/inet.h:
+
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
@@ -451,6 +500,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/type_traits:
 
+/usr/include/netinet/in.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
@@ -477,6 +528,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
+/usr/include/asm-generic/posix_types.h:
+
 /usr/include/stdc-predef.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
@@ -496,6 +549,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/ext/type_traits.h:
 
 /usr/include/c++/11/ratio:
+
+/usr/include/linux/stddef.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
 
@@ -573,6 +628,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/move.h:
 
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
+
 /usr/include/c++/11/functional:
 
 /usr/include/asm-generic/errno-base.h:
@@ -586,6 +643,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/pstl/pstl_config.h:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
 
 /usr/include/c++/11/cwchar:
 
@@ -639,6 +698,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/localefwd.h:
 
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
 /usr/include/locale.h:
@@ -672,6 +733,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/asm-generic/socket.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 

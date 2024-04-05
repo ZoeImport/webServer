@@ -130,17 +130,30 @@ output/fast:
 .PHONY : output/fast
 
 #=============================================================================
-# Target rules for targets named thread_pool
+# Target rules for targets named threadpooll
 
 # Build rule for target.
-thread_pool: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thread_pool
-.PHONY : thread_pool
+threadpooll: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 threadpooll
+.PHONY : threadpooll
 
 # fast build rule for target.
-thread_pool/fast:
-	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/thread_pool.dir/build.make threadPool/CMakeFiles/thread_pool.dir/build
-.PHONY : thread_pool/fast
+threadpooll/fast:
+	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/threadpooll.dir/build.make threadPool/CMakeFiles/threadpooll.dir/build
+.PHONY : threadpooll/fast
+
+#=============================================================================
+# Target rules for targets named serverl
+
+# Build rule for target.
+serverl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 serverl
+.PHONY : serverl
+
+# fast build rule for target.
+serverl/fast:
+	$(MAKE) $(MAKESILENT) -f socket/CMakeFiles/serverl.dir/build.make socket/CMakeFiles/serverl.dir/build
+.PHONY : serverl/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -175,7 +188,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... output"
-	@echo "... thread_pool"
+	@echo "... serverl"
+	@echo "... threadpooll"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

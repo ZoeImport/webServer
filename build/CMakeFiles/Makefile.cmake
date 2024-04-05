@@ -11,6 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
+  "../socket/CMakeLists.txt"
   "../threadPool/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
@@ -41,10 +42,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "threadPool/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "socket/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/output.dir/DependInfo.cmake"
-  "threadPool/CMakeFiles/thread_pool.dir/DependInfo.cmake"
+  "threadPool/CMakeFiles/threadpooll.dir/DependInfo.cmake"
+  "socket/CMakeFiles/serverl.dir/DependInfo.cmake"
   )
