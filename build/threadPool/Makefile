@@ -117,25 +117,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-threadPool/CMakeFiles/threadpooll.dir/rule:
-	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 threadPool/CMakeFiles/threadpooll.dir/rule
-.PHONY : threadPool/CMakeFiles/threadpooll.dir/rule
+threadPool/CMakeFiles/ThreadPool.dir/rule:
+	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 threadPool/CMakeFiles/ThreadPool.dir/rule
+.PHONY : threadPool/CMakeFiles/ThreadPool.dir/rule
 
 # Convenience name for target.
-threadpooll: threadPool/CMakeFiles/threadpooll.dir/rule
-.PHONY : threadpooll
+ThreadPool: threadPool/CMakeFiles/ThreadPool.dir/rule
+.PHONY : ThreadPool
 
 # fast build rule for target.
-threadpooll/fast:
-	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/threadpooll.dir/build.make threadPool/CMakeFiles/threadpooll.dir/build
-.PHONY : threadpooll/fast
+ThreadPool/fast:
+	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/build
+.PHONY : ThreadPool/fast
 
 Thread.o: Thread.cpp.o
 .PHONY : Thread.o
 
 # target to build an object file
 Thread.cpp.o:
-	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/threadpooll.dir/build.make threadPool/CMakeFiles/threadpooll.dir/Thread.cpp.o
+	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/Thread.cpp.o
 .PHONY : Thread.cpp.o
 
 Thread.i: Thread.cpp.i
@@ -143,7 +143,7 @@ Thread.i: Thread.cpp.i
 
 # target to preprocess a source file
 Thread.cpp.i:
-	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/threadpooll.dir/build.make threadPool/CMakeFiles/threadpooll.dir/Thread.cpp.i
+	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/Thread.cpp.i
 .PHONY : Thread.cpp.i
 
 Thread.s: Thread.cpp.s
@@ -151,7 +151,7 @@ Thread.s: Thread.cpp.s
 
 # target to generate assembly for a file
 Thread.cpp.s:
-	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/threadpooll.dir/build.make threadPool/CMakeFiles/threadpooll.dir/Thread.cpp.s
+	cd /home/zoe/webServer/build && $(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/Thread.cpp.s
 .PHONY : Thread.cpp.s
 
 # Help Target
@@ -162,7 +162,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... threadpooll"
+	@echo "... ThreadPool"
 	@echo "... Thread.o"
 	@echo "... Thread.i"
 	@echo "... Thread.s"

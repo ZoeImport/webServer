@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libthreadpooll.a CMakeFiles/threadpooll.dir/Thread.cpp.o
-/usr/bin/ranlib ../../lib/libthreadpooll.a

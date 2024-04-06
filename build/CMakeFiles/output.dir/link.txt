@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/output.dir/main.cpp.o -o output  ../lib/libthreadpooll.a ../lib/libserverl.a 
+/usr/bin/c++ CMakeFiles/output.dir/main.cpp.o -o output  ../lib/libThreadPool.a ../lib/libTcpSocket.a ../lib/libEpoll.a 

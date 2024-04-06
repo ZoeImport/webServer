@@ -1,4 +1,5 @@
 #include "Thread.h"
+#include "spdlog/spdlog.h"
 #include <functional>
 #include <mutex>
 #include <queue>
@@ -10,6 +11,7 @@ ThreadPool::ThreadPool(int size) : maxSize(size), stop(false) {
         std::unique_lock<std::mutex> constructLock(mtx);
         cv.wait(constructLock, [this] { return stop || !this->tasks.empty(); });
         if (stop && tasks.empty()) {
+          spdlog::error("thread pool is not active ...");
           return ;
         }
         auto task = std::function<void()>(std::move(tasks.front()));

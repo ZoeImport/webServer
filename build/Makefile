@@ -130,30 +130,43 @@ output/fast:
 .PHONY : output/fast
 
 #=============================================================================
-# Target rules for targets named threadpooll
+# Target rules for targets named ThreadPool
 
 # Build rule for target.
-threadpooll: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 threadpooll
-.PHONY : threadpooll
+ThreadPool: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreadPool
+.PHONY : ThreadPool
 
 # fast build rule for target.
-threadpooll/fast:
-	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/threadpooll.dir/build.make threadPool/CMakeFiles/threadpooll.dir/build
-.PHONY : threadpooll/fast
+ThreadPool/fast:
+	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/build
+.PHONY : ThreadPool/fast
 
 #=============================================================================
-# Target rules for targets named serverl
+# Target rules for targets named TcpSocket
 
 # Build rule for target.
-serverl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 serverl
-.PHONY : serverl
+TcpSocket: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TcpSocket
+.PHONY : TcpSocket
 
 # fast build rule for target.
-serverl/fast:
-	$(MAKE) $(MAKESILENT) -f socket/CMakeFiles/serverl.dir/build.make socket/CMakeFiles/serverl.dir/build
-.PHONY : serverl/fast
+TcpSocket/fast:
+	$(MAKE) $(MAKESILENT) -f TcpSocket/CMakeFiles/TcpSocket.dir/build.make TcpSocket/CMakeFiles/TcpSocket.dir/build
+.PHONY : TcpSocket/fast
+
+#=============================================================================
+# Target rules for targets named Epoll
+
+# Build rule for target.
+Epoll: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Epoll
+.PHONY : Epoll
+
+# fast build rule for target.
+Epoll/fast:
+	$(MAKE) $(MAKESILENT) -f TcpSocket/epoll/CMakeFiles/Epoll.dir/build.make TcpSocket/epoll/CMakeFiles/Epoll.dir/build
+.PHONY : Epoll/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -187,9 +200,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Epoll"
+	@echo "... TcpSocket"
+	@echo "... ThreadPool"
 	@echo "... output"
-	@echo "... serverl"
-	@echo "... threadpooll"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

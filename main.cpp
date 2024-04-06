@@ -1,10 +1,10 @@
 #include <chrono>
 #include <iostream>
 #include <thread>
-
+#include "spdlog/spdlog.h"
 #include "threadPool/Thread.h"
-
-#include "socket/server.h"
+#include "TcpSocket/TcpSocket.h"
+#include "TcpSocket/epoll/Epoll.h"
 
 int main() {
   // ThreadPool threads(5);
@@ -15,8 +15,8 @@ int main() {
   //     std::this_thread::sleep_for(std::chrono::milliseconds(10));
   //   },index);
   // }
-  Server server(9002);
-  server.accept_connect([](char *buf) -> char * {
-    return buf;
-  });
+  Epoll server(9002, true); // 设置端口复用
+  
+  spdlog::info("service begin in port 9002");
+  server.start([](char *buf) -> char * { return buf; });
 }

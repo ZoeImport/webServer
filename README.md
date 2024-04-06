@@ -19,3 +19,11 @@ ThreadPool.h
   实现accpet阻塞后的函数封装
   对于accpet_connect提供接口，该接口可以是Lambda表达式等一系列可调用对象，能够利用可调用对象进行数据处理，实现基础的echo
   
+# v0.4
+  引入spdlog库进行日志控制
+  引入io多路复用设计(epoll)
+  修改基础设计server库为TcpSocket库
+  新增epoll设计库
+  新增TcpSocket成员变量:buf buffersize 修改构造函数默认buffersize为1024
+  修改server_func为ConnectCallback
+  
