@@ -1,6 +1,7 @@
 #include "test2.h"
 #include <chrono>
 #include <condition_variable>
+#include <functional>
 #include <iostream>
 #include <mutex>
 #include <ratio>
@@ -39,6 +40,8 @@ int main() {
   // temp.nums.push_back(20);
   // create thread pool with 4 worker threads
   ThreadPool pool(4);
+
+  std::function<void()> func;
 
   // auto result = pool.enqueue([](int answer) { return answer; }, 42);
 

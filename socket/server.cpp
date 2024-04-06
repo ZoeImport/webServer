@@ -1,14 +1,24 @@
 #include "server.h"
 #include <arpa/inet.h>
 #include <exception>
+#include <functional>
 #include <iostream>
+#include <memory>
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <unistd.h>
+#include <utility>
 
-void server_func(char *buf, int connectfd) {
-  auto ret = send(connectfd, buf, sizeof(buf), 0);
+
+void server_func(char *buf, int connectfd,const std::function<char*(char*)> &func) {
+  // auto func_ptr = std::make_unique(
+      // std::bind(std::forward<F>(f), std::forward<Args>(args)...));
+  auto date =func(buf);
+  auto ret = send(connectfd, date, sizeof(buf), 0);
 }
+
+
+
 
 Server::Server(int port) {
   this->fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -29,7 +39,7 @@ Server::Server(int port) {
   listen(fd, 128); // mark the max connect size
 }
 
-int Server::accept_connect() {
+int Server::accept_connect(const std::function<char*(char*)> &func) {
   std::cout<<"waiting connection"<<std::endl;
   sockaddr_in caddr;
   this->cfd = accept(fd, (struct sockaddr *)&caddr, &addrlen);
@@ -45,7 +55,7 @@ int Server::accept_connect() {
     char buffer[1024];
     auto len = recv(cfd, buffer, sizeof(buffer), 0);
     if (len > 0) {
-      server_func(buffer, cfd);
+      server_func(buffer, cfd,func);
 
     } else if (len == 0) {
       std::cout << "client close" << std::endl;

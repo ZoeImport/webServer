@@ -14,4 +14,8 @@ ThreadPool.h
  实现单线程的基础echo通信
  实现accpet阻塞前的基础包装
  
- 
+# v0.3
+  保持单线程设计
+  实现accpet阻塞后的函数封装
+  对于accpet_connect提供接口，该接口可以是Lambda表达式等一系列可调用对象，能够利用可调用对象进行数据处理，实现基础的echo
+  

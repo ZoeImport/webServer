@@ -15,6 +15,8 @@ int main() {
   //     std::this_thread::sleep_for(std::chrono::milliseconds(10));
   //   },index);
   // }
-  Server server(9001);
-  server.accept_connect();
+  Server server(9002);
+  server.accept_connect([](char *buf) -> char * {
+    return buf;
+  });
 }
