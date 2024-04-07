@@ -2,9 +2,9 @@
 #include <iostream>
 #include <thread>
 #include "spdlog/spdlog.h"
-#include "threadPool/Thread.h"
-#include "TcpSocket/TcpSocket.h"
-#include "TcpSocket/epoll/Epoll.h"
+#include "include/threadPool/Thread.h"
+#include "include/TcpSocket/TcpSocket.h"
+#include "include/epoll/Epoll.h"
 
 int main() {
   // ThreadPool threads(5);

@@ -13,9 +13,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/zoe/webServer/build/threadPool/CMakeFiles/ThreadPool.dir/DependInfo.cmake"
-  "/home/zoe/webServer/build/TcpSocket/CMakeFiles/TcpSocket.dir/DependInfo.cmake"
-  "/home/zoe/webServer/build/TcpSocket/epoll/CMakeFiles/Epoll.dir/DependInfo.cmake"
+  "/home/zoe/webServer/build/include/threadPool/CMakeFiles/ThreadPool.dir/DependInfo.cmake"
+  "/home/zoe/webServer/build/include/TcpSocket/CMakeFiles/TcpSocket.dir/DependInfo.cmake"
+  "/home/zoe/webServer/build/include/epoll/CMakeFiles/Epoll.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

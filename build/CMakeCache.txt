@@ -210,31 +210,31 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-Epoll_BINARY_DIR:STATIC=/home/zoe/webServer/build/TcpSocket/epoll
+Epoll_BINARY_DIR:STATIC=/home/zoe/webServer/build/include/epoll
 
 //Value Computed by CMake
 Epoll_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-Epoll_SOURCE_DIR:STATIC=/home/zoe/webServer/TcpSocket/epoll
+Epoll_SOURCE_DIR:STATIC=/home/zoe/webServer/include/epoll
 
 //Value Computed by CMake
-TcpSocket_BINARY_DIR:STATIC=/home/zoe/webServer/build/TcpSocket
+TcpSocket_BINARY_DIR:STATIC=/home/zoe/webServer/build/include/TcpSocket
 
 //Value Computed by CMake
 TcpSocket_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-TcpSocket_SOURCE_DIR:STATIC=/home/zoe/webServer/TcpSocket
+TcpSocket_SOURCE_DIR:STATIC=/home/zoe/webServer/include/TcpSocket
 
 //Value Computed by CMake
-ThreadPool_BINARY_DIR:STATIC=/home/zoe/webServer/build/threadPool
+ThreadPool_BINARY_DIR:STATIC=/home/zoe/webServer/build/include/threadPool
 
 //Value Computed by CMake
 ThreadPool_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-ThreadPool_SOURCE_DIR:STATIC=/home/zoe/webServer/threadPool
+ThreadPool_SOURCE_DIR:STATIC=/home/zoe/webServer/include/threadPool
 
 //Value Computed by CMake
 output_BINARY_DIR:STATIC=/home/zoe/webServer/build

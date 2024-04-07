@@ -139,7 +139,7 @@ ThreadPool: cmake_check_build_system
 
 # fast build rule for target.
 ThreadPool/fast:
-	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/build
+	$(MAKE) $(MAKESILENT) -f include/threadPool/CMakeFiles/ThreadPool.dir/build.make include/threadPool/CMakeFiles/ThreadPool.dir/build
 .PHONY : ThreadPool/fast
 
 #=============================================================================
@@ -152,7 +152,7 @@ TcpSocket: cmake_check_build_system
 
 # fast build rule for target.
 TcpSocket/fast:
-	$(MAKE) $(MAKESILENT) -f TcpSocket/CMakeFiles/TcpSocket.dir/build.make TcpSocket/CMakeFiles/TcpSocket.dir/build
+	$(MAKE) $(MAKESILENT) -f include/TcpSocket/CMakeFiles/TcpSocket.dir/build.make include/TcpSocket/CMakeFiles/TcpSocket.dir/build
 .PHONY : TcpSocket/fast
 
 #=============================================================================
@@ -165,7 +165,7 @@ Epoll: cmake_check_build_system
 
 # fast build rule for target.
 Epoll/fast:
-	$(MAKE) $(MAKESILENT) -f TcpSocket/epoll/CMakeFiles/Epoll.dir/build.make TcpSocket/epoll/CMakeFiles/Epoll.dir/build
+	$(MAKE) $(MAKESILENT) -f include/epoll/CMakeFiles/Epoll.dir/build.make include/epoll/CMakeFiles/Epoll.dir/build
 .PHONY : Epoll/fast
 
 main.o: main.cpp.o

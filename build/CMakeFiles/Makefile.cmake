@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
-  "../TcpSocket/CMakeLists.txt"
-  "../TcpSocket/epoll/CMakeLists.txt"
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
-  "../threadPool/CMakeLists.txt"
+  "../include/TcpSocket/CMakeLists.txt"
+  "../include/epoll/CMakeLists.txt"
+  "../include/threadPool/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
@@ -42,15 +42,15 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "threadPool/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "TcpSocket/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "TcpSocket/epoll/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include/threadPool/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include/TcpSocket/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include/epoll/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/output.dir/DependInfo.cmake"
-  "threadPool/CMakeFiles/ThreadPool.dir/DependInfo.cmake"
-  "TcpSocket/CMakeFiles/TcpSocket.dir/DependInfo.cmake"
-  "TcpSocket/epoll/CMakeFiles/Epoll.dir/DependInfo.cmake"
+  "include/threadPool/CMakeFiles/ThreadPool.dir/DependInfo.cmake"
+  "include/TcpSocket/CMakeFiles/TcpSocket.dir/DependInfo.cmake"
+  "include/epoll/CMakeFiles/Epoll.dir/DependInfo.cmake"
   )

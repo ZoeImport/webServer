@@ -64,76 +64,76 @@ CMAKE_BINARY_DIR = /home/zoe/webServer/build
 
 # The main recursive "all" target.
 all: CMakeFiles/output.dir/all
-all: threadPool/all
-all: TcpSocket/all
-all: TcpSocket/epoll/all
+all: include/threadPool/all
+all: include/TcpSocket/all
+all: include/epoll/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: threadPool/preinstall
-preinstall: TcpSocket/preinstall
-preinstall: TcpSocket/epoll/preinstall
+preinstall: include/threadPool/preinstall
+preinstall: include/TcpSocket/preinstall
+preinstall: include/epoll/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/output.dir/clean
-clean: threadPool/clean
-clean: TcpSocket/clean
-clean: TcpSocket/epoll/clean
+clean: include/threadPool/clean
+clean: include/TcpSocket/clean
+clean: include/epoll/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory TcpSocket
+# Directory level rules for directory include/TcpSocket
 
 # Recursive "all" directory target.
-TcpSocket/all: TcpSocket/CMakeFiles/TcpSocket.dir/all
-.PHONY : TcpSocket/all
+include/TcpSocket/all: include/TcpSocket/CMakeFiles/TcpSocket.dir/all
+.PHONY : include/TcpSocket/all
 
 # Recursive "preinstall" directory target.
-TcpSocket/preinstall:
-.PHONY : TcpSocket/preinstall
+include/TcpSocket/preinstall:
+.PHONY : include/TcpSocket/preinstall
 
 # Recursive "clean" directory target.
-TcpSocket/clean: TcpSocket/CMakeFiles/TcpSocket.dir/clean
-.PHONY : TcpSocket/clean
+include/TcpSocket/clean: include/TcpSocket/CMakeFiles/TcpSocket.dir/clean
+.PHONY : include/TcpSocket/clean
 
 #=============================================================================
-# Directory level rules for directory TcpSocket/epoll
+# Directory level rules for directory include/epoll
 
 # Recursive "all" directory target.
-TcpSocket/epoll/all: TcpSocket/epoll/CMakeFiles/Epoll.dir/all
-.PHONY : TcpSocket/epoll/all
+include/epoll/all: include/epoll/CMakeFiles/Epoll.dir/all
+.PHONY : include/epoll/all
 
 # Recursive "preinstall" directory target.
-TcpSocket/epoll/preinstall:
-.PHONY : TcpSocket/epoll/preinstall
+include/epoll/preinstall:
+.PHONY : include/epoll/preinstall
 
 # Recursive "clean" directory target.
-TcpSocket/epoll/clean: TcpSocket/epoll/CMakeFiles/Epoll.dir/clean
-.PHONY : TcpSocket/epoll/clean
+include/epoll/clean: include/epoll/CMakeFiles/Epoll.dir/clean
+.PHONY : include/epoll/clean
 
 #=============================================================================
-# Directory level rules for directory threadPool
+# Directory level rules for directory include/threadPool
 
 # Recursive "all" directory target.
-threadPool/all: threadPool/CMakeFiles/ThreadPool.dir/all
-.PHONY : threadPool/all
+include/threadPool/all: include/threadPool/CMakeFiles/ThreadPool.dir/all
+.PHONY : include/threadPool/all
 
 # Recursive "preinstall" directory target.
-threadPool/preinstall:
-.PHONY : threadPool/preinstall
+include/threadPool/preinstall:
+.PHONY : include/threadPool/preinstall
 
 # Recursive "clean" directory target.
-threadPool/clean: threadPool/CMakeFiles/ThreadPool.dir/clean
-.PHONY : threadPool/clean
+include/threadPool/clean: include/threadPool/CMakeFiles/ThreadPool.dir/clean
+.PHONY : include/threadPool/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/output.dir
 
 # All Build rule for target.
-CMakeFiles/output.dir/all: threadPool/CMakeFiles/ThreadPool.dir/all
-CMakeFiles/output.dir/all: TcpSocket/CMakeFiles/TcpSocket.dir/all
-CMakeFiles/output.dir/all: TcpSocket/epoll/CMakeFiles/Epoll.dir/all
+CMakeFiles/output.dir/all: include/threadPool/CMakeFiles/ThreadPool.dir/all
+CMakeFiles/output.dir/all: include/TcpSocket/CMakeFiles/TcpSocket.dir/all
+CMakeFiles/output.dir/all: include/epoll/CMakeFiles/Epoll.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=7,8 "Built target output"
@@ -156,82 +156,82 @@ CMakeFiles/output.dir/clean:
 .PHONY : CMakeFiles/output.dir/clean
 
 #=============================================================================
-# Target rules for target threadPool/CMakeFiles/ThreadPool.dir
+# Target rules for target include/threadPool/CMakeFiles/ThreadPool.dir
 
 # All Build rule for target.
-threadPool/CMakeFiles/ThreadPool.dir/all:
-	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/depend
-	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/build
+include/threadPool/CMakeFiles/ThreadPool.dir/all:
+	$(MAKE) $(MAKESILENT) -f include/threadPool/CMakeFiles/ThreadPool.dir/build.make include/threadPool/CMakeFiles/ThreadPool.dir/depend
+	$(MAKE) $(MAKESILENT) -f include/threadPool/CMakeFiles/ThreadPool.dir/build.make include/threadPool/CMakeFiles/ThreadPool.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=5,6 "Built target ThreadPool"
-.PHONY : threadPool/CMakeFiles/ThreadPool.dir/all
+.PHONY : include/threadPool/CMakeFiles/ThreadPool.dir/all
 
 # Build rule for subdir invocation for target.
-threadPool/CMakeFiles/ThreadPool.dir/rule: cmake_check_build_system
+include/threadPool/CMakeFiles/ThreadPool.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 threadPool/CMakeFiles/ThreadPool.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 include/threadPool/CMakeFiles/ThreadPool.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 0
-.PHONY : threadPool/CMakeFiles/ThreadPool.dir/rule
+.PHONY : include/threadPool/CMakeFiles/ThreadPool.dir/rule
 
 # Convenience name for target.
-ThreadPool: threadPool/CMakeFiles/ThreadPool.dir/rule
+ThreadPool: include/threadPool/CMakeFiles/ThreadPool.dir/rule
 .PHONY : ThreadPool
 
 # clean rule for target.
-threadPool/CMakeFiles/ThreadPool.dir/clean:
-	$(MAKE) $(MAKESILENT) -f threadPool/CMakeFiles/ThreadPool.dir/build.make threadPool/CMakeFiles/ThreadPool.dir/clean
-.PHONY : threadPool/CMakeFiles/ThreadPool.dir/clean
+include/threadPool/CMakeFiles/ThreadPool.dir/clean:
+	$(MAKE) $(MAKESILENT) -f include/threadPool/CMakeFiles/ThreadPool.dir/build.make include/threadPool/CMakeFiles/ThreadPool.dir/clean
+.PHONY : include/threadPool/CMakeFiles/ThreadPool.dir/clean
 
 #=============================================================================
-# Target rules for target TcpSocket/CMakeFiles/TcpSocket.dir
+# Target rules for target include/TcpSocket/CMakeFiles/TcpSocket.dir
 
 # All Build rule for target.
-TcpSocket/CMakeFiles/TcpSocket.dir/all:
-	$(MAKE) $(MAKESILENT) -f TcpSocket/CMakeFiles/TcpSocket.dir/build.make TcpSocket/CMakeFiles/TcpSocket.dir/depend
-	$(MAKE) $(MAKESILENT) -f TcpSocket/CMakeFiles/TcpSocket.dir/build.make TcpSocket/CMakeFiles/TcpSocket.dir/build
+include/TcpSocket/CMakeFiles/TcpSocket.dir/all:
+	$(MAKE) $(MAKESILENT) -f include/TcpSocket/CMakeFiles/TcpSocket.dir/build.make include/TcpSocket/CMakeFiles/TcpSocket.dir/depend
+	$(MAKE) $(MAKESILENT) -f include/TcpSocket/CMakeFiles/TcpSocket.dir/build.make include/TcpSocket/CMakeFiles/TcpSocket.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=3,4 "Built target TcpSocket"
-.PHONY : TcpSocket/CMakeFiles/TcpSocket.dir/all
+.PHONY : include/TcpSocket/CMakeFiles/TcpSocket.dir/all
 
 # Build rule for subdir invocation for target.
-TcpSocket/CMakeFiles/TcpSocket.dir/rule: cmake_check_build_system
+include/TcpSocket/CMakeFiles/TcpSocket.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TcpSocket/CMakeFiles/TcpSocket.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 include/TcpSocket/CMakeFiles/TcpSocket.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 0
-.PHONY : TcpSocket/CMakeFiles/TcpSocket.dir/rule
+.PHONY : include/TcpSocket/CMakeFiles/TcpSocket.dir/rule
 
 # Convenience name for target.
-TcpSocket: TcpSocket/CMakeFiles/TcpSocket.dir/rule
+TcpSocket: include/TcpSocket/CMakeFiles/TcpSocket.dir/rule
 .PHONY : TcpSocket
 
 # clean rule for target.
-TcpSocket/CMakeFiles/TcpSocket.dir/clean:
-	$(MAKE) $(MAKESILENT) -f TcpSocket/CMakeFiles/TcpSocket.dir/build.make TcpSocket/CMakeFiles/TcpSocket.dir/clean
-.PHONY : TcpSocket/CMakeFiles/TcpSocket.dir/clean
+include/TcpSocket/CMakeFiles/TcpSocket.dir/clean:
+	$(MAKE) $(MAKESILENT) -f include/TcpSocket/CMakeFiles/TcpSocket.dir/build.make include/TcpSocket/CMakeFiles/TcpSocket.dir/clean
+.PHONY : include/TcpSocket/CMakeFiles/TcpSocket.dir/clean
 
 #=============================================================================
-# Target rules for target TcpSocket/epoll/CMakeFiles/Epoll.dir
+# Target rules for target include/epoll/CMakeFiles/Epoll.dir
 
 # All Build rule for target.
-TcpSocket/epoll/CMakeFiles/Epoll.dir/all:
-	$(MAKE) $(MAKESILENT) -f TcpSocket/epoll/CMakeFiles/Epoll.dir/build.make TcpSocket/epoll/CMakeFiles/Epoll.dir/depend
-	$(MAKE) $(MAKESILENT) -f TcpSocket/epoll/CMakeFiles/Epoll.dir/build.make TcpSocket/epoll/CMakeFiles/Epoll.dir/build
+include/epoll/CMakeFiles/Epoll.dir/all:
+	$(MAKE) $(MAKESILENT) -f include/epoll/CMakeFiles/Epoll.dir/build.make include/epoll/CMakeFiles/Epoll.dir/depend
+	$(MAKE) $(MAKESILENT) -f include/epoll/CMakeFiles/Epoll.dir/build.make include/epoll/CMakeFiles/Epoll.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=1,2 "Built target Epoll"
-.PHONY : TcpSocket/epoll/CMakeFiles/Epoll.dir/all
+.PHONY : include/epoll/CMakeFiles/Epoll.dir/all
 
 # Build rule for subdir invocation for target.
-TcpSocket/epoll/CMakeFiles/Epoll.dir/rule: cmake_check_build_system
+include/epoll/CMakeFiles/Epoll.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TcpSocket/epoll/CMakeFiles/Epoll.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 include/epoll/CMakeFiles/Epoll.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 0
-.PHONY : TcpSocket/epoll/CMakeFiles/Epoll.dir/rule
+.PHONY : include/epoll/CMakeFiles/Epoll.dir/rule
 
 # Convenience name for target.
-Epoll: TcpSocket/epoll/CMakeFiles/Epoll.dir/rule
+Epoll: include/epoll/CMakeFiles/Epoll.dir/rule
 .PHONY : Epoll
 
 # clean rule for target.
-TcpSocket/epoll/CMakeFiles/Epoll.dir/clean:
-	$(MAKE) $(MAKESILENT) -f TcpSocket/epoll/CMakeFiles/Epoll.dir/build.make TcpSocket/epoll/CMakeFiles/Epoll.dir/clean
-.PHONY : TcpSocket/epoll/CMakeFiles/Epoll.dir/clean
+include/epoll/CMakeFiles/Epoll.dir/clean:
+	$(MAKE) $(MAKESILENT) -f include/epoll/CMakeFiles/Epoll.dir/build.make include/epoll/CMakeFiles/Epoll.dir/clean
+.PHONY : include/epoll/CMakeFiles/Epoll.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
