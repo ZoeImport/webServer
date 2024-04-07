@@ -368,13 +368,15 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
   /usr/include/spdlog/details/synchronous_factory.h \
   /usr/include/spdlog/version.h \
   /usr/include/spdlog/spdlog-inl.h \
-  ../threadPool/Thread.h \
+  ../include/threadPool/Thread.h \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_queue.h \
-  ../TcpSocket/TcpSocket.h \
+  /usr/include/c++/11/future \
+  /usr/include/c++/11/bits/atomic_futex.h \
+  ../include/TcpSocket/TcpSocket.h \
   /usr/include/arpa/inet.h \
   /usr/include/netinet/in.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
@@ -387,7 +389,7 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
-  ../TcpSocket/epoll/Epoll.h \
+  ../include/epoll/Epoll.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h
 
@@ -405,8 +407,6 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 /usr/include/arpa/inet.h:
 
 /usr/include/c++/11/bits/deque.tcc:
-
-../threadPool/Thread.h:
 
 /usr/include/spdlog/details/synchronous_factory.h:
 
@@ -458,6 +458,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/linux/posix_types.h:
 
+../include/TcpSocket/TcpSocket.h:
+
 /usr/include/x86_64-linux-gnu/asm/types.h:
 
 /usr/include/c++/11/deque:
@@ -502,6 +504,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/locale_facets_nonio.h:
 
+../include/epoll/Epoll.h:
+
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
@@ -537,6 +541,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/tr1/bessel_function.tcc:
 
 /usr/include/c++/11/tr1/special_function_util.h:
+
+../include/threadPool/Thread.h:
 
 /usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
@@ -633,8 +639,6 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/cmath:
 
 /usr/include/c++/11/bits/allocator.h:
-
-../TcpSocket/TcpSocket.h:
 
 /usr/include/c++/11/bits/char_traits.h:
 
@@ -784,9 +788,9 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/exception_ptr.h:
 
-/usr/include/c++/11/ext/string_conversions.h:
+/usr/include/c++/11/bits/atomic_futex.h:
 
-../TcpSocket/epoll/Epoll.h:
+/usr/include/c++/11/ext/string_conversions.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
@@ -917,6 +921,8 @@ CMakeFiles/output.dir/main.cpp.o: ../main.cpp \
 /usr/include/stdlib.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/c++/11/future:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 

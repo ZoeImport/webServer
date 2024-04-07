@@ -57,6 +57,11 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/zoe/webServer/build/include/epoll/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/zoe/webServer/build/include/tools/cmake_install.cmake")
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()

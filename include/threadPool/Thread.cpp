@@ -11,7 +11,7 @@ ThreadPool::ThreadPool(int size) : maxSize(size), stop(false) {
         std::unique_lock<std::mutex> constructLock(mtx);
         cv.wait(constructLock, [this] { return stop || !this->tasks.empty(); });
         if (stop && tasks.empty()) {
-          spdlog::error("thread pool is not active ...");
+          // spdlog::error("thread pool is not active ...");
           return ;
         }
         auto task = std::function<void()>(std::move(tasks.front()));
@@ -21,7 +21,9 @@ ThreadPool::ThreadPool(int size) : maxSize(size), stop(false) {
         task();
       }
     });
+    // spdlog::info("thread create");
   }
+  spdlog::info("thread pool init");
 }
 
 ThreadPool::~ThreadPool() {
@@ -33,14 +35,7 @@ ThreadPool::~ThreadPool() {
   for (auto &thread : threads) {
     thread.join();
   }
+  spdlog::info("thread pool destruct");
 }
 
 
-// template <typename F, typename... Args>
-// auto ThreadPool::enQueue(F &&f, Args &&...args) -> decltype(f(args...)){
-//   auto func = std::bind(f, args...);
-//   {
-//     std::unique_lock<std::mutex> lock(mtx);
-//     tasks.emplace(func);
-//   }
-// }

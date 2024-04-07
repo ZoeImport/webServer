@@ -32,5 +32,19 @@
   
 ## v0.45  
   
-  修改项目目录结构，新增include目录，修改源文件层级关系
+  修改项目目录结构，新增include目录，修改源文件层级关系  
 
+## v0.5
+
+  TheadPool库:  
+    修改ThreadPool库enQueue函数,修改返回值为funture对象  
+    增加packaged_task包装器进行包装  
+  Epoll库:  
+    结合ThreadPool实现io多路复用+线程池设计:为建立新连接和接收传递数据分别使用子线程  
+    新增threadPoolAvtive变量控制Epoll对线程池使用的开关  
+    新增智能指针(shared_ptr)控制Epoll私有线程池变量pool_ptr  
+    <!-- 重载start函数以增加线程池的设计   -->
+    新增epoll_recv wait epoll_deal私有方法实现Epoll创建后的模块分离  
+  tools库:  
+    新增wrap函数用于将函数转成一个可被使用的可调用对象  
+  

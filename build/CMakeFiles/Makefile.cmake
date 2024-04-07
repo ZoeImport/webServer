@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../include/TcpSocket/CMakeLists.txt"
   "../include/epoll/CMakeLists.txt"
   "../include/threadPool/CMakeLists.txt"
+  "../include/tools/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
@@ -45,6 +46,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "include/threadPool/CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/TcpSocket/CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/epoll/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include/tools/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -53,4 +55,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "include/threadPool/CMakeFiles/ThreadPool.dir/DependInfo.cmake"
   "include/TcpSocket/CMakeFiles/TcpSocket.dir/DependInfo.cmake"
   "include/epoll/CMakeFiles/Epoll.dir/DependInfo.cmake"
+  "include/tools/CMakeFiles/Tool.dir/DependInfo.cmake"
   )

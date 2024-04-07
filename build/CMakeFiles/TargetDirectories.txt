@@ -10,3 +10,6 @@
 /home/zoe/webServer/build/include/epoll/CMakeFiles/Epoll.dir
 /home/zoe/webServer/build/include/epoll/CMakeFiles/edit_cache.dir
 /home/zoe/webServer/build/include/epoll/CMakeFiles/rebuild_cache.dir
+/home/zoe/webServer/build/include/tools/CMakeFiles/Tool.dir
+/home/zoe/webServer/build/include/tools/CMakeFiles/edit_cache.dir
+/home/zoe/webServer/build/include/tools/CMakeFiles/rebuild_cache.dir

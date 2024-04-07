@@ -15,8 +15,10 @@ int main() {
   //     std::this_thread::sleep_for(std::chrono::milliseconds(10));
   //   },index);
   // }
-  Epoll server(9002, true); // 设置端口复用
+  ThreadPool thread;
+  // Epoll server(9002, true,ThreadPool()); // 设置端口复用
+  Epoll server(9002, true,true); // 设置端口复用
   
   spdlog::info("service begin in port 9002");
-  server.start([](char *buf) -> char * { return buf; });
+  server.startWithThreads([](char *buf) -> char * { return buf; });
 }
