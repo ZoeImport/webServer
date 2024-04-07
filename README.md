@@ -48,3 +48,13 @@
   tools库:  
     新增wrap函数用于将函数转成一个可被使用的可调用对象  
   
+## v0.55
+
+  ThreadPool库:  
+    修改enQueue函数使用decltype代替result_type  
+  Epoll库:  
+    重载start函数,代替startWithThreads使用  
+    修改构造函数参数列表  
+  宏增加:
+    新增THREAD_POOL_ACTIVE宏,在预编译阶段进行代码压缩
+    

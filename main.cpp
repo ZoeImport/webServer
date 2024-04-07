@@ -6,6 +6,8 @@
 #include "include/TcpSocket/TcpSocket.h"
 #include "include/epoll/Epoll.h"
 
+#define THREAD_POOL_ACTIVE 1
+
 int main() {
   // ThreadPool threads(5);
   // for (auto index = 0; index < 100; ++index) {

@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include <utility>
 
+
 int Epoll::start(const std::function<char *(char *)> &func) {
   spdlog::info("start begin");
   while (1) {
@@ -48,6 +49,7 @@ int Epoll::start(const std::function<char *(char *)> &func) {
     }
   }
 }
+#ifdef THREAD_POOL_ACTIVE
 
 void Epoll::startWithThreads(const std::function<char *(char *)> &func) {
   this->wait(func);
@@ -122,5 +124,5 @@ int Epoll::epoll_recv(int currfd, const std::function<char *(char *)> &func) {
   }
   return 0;
 }
-
+#endif
 Epoll::~Epoll() { spdlog::info("epoll destruct "); }
