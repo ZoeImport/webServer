@@ -13,6 +13,9 @@ add_subdirectory(include/TcpSocket)
 add_subdirectory(include/epoll)
 add_subdirectory(include/tools)
 
+find_package(spdlog REQUIRED)
+
+target_link_libraries(output spdlog::spdlog)
 target_link_libraries(output ThreadPool)
 target_link_libraries(output TcpSocket)
 target_link_libraries(output Epoll)
