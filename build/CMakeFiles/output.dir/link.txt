@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/output.dir/main.cpp.o -o output  -Wl,-rpath,/home/zoeImport/Learning/webServer/lib /usr/lib/libspdlog.so.1.13.0 /home/zoeImport/Learning/webServer/lib/libThreadPool.a /home/zoeImport/Learning/webServer/lib/libTcpSocket.a /home/zoeImport/Learning/webServer/lib/libEpoll.a /home/zoeImport/Learning/webServer/lib/libTool.so /usr/lib/libfmt.so.10.2.0
+/usr/bin/c++ CMakeFiles/output.dir/main.cpp.o -o output  ../lib/libThreadPool.a ../lib/libTcpSocket.a ../lib/libHttpparse.a /usr/lib/libboost_unit_test_framework.so.1.85.0 

@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <utility>
 
-
 int Epoll::start(const std::function<char *(char *)> &func) {
   spdlog::info("start begin");
   while (1) {
@@ -120,7 +119,8 @@ int Epoll::epoll_recv(int currfd, const std::function<char *(char *)> &func) {
     ConnectCallback(this->buf, currfd, func);
   } else {
     spdlog::error("recv error");
-    exit(0);
+    // exit(0);
+    close(currfd);
   }
   return 0;
 }
