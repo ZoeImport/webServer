@@ -2,6 +2,7 @@
 #include <boost/test/unit_test_suite.hpp>
 #include <fstream>
 #include <iostream>
+#include "../tools/tool.h"
 
 HttpRequest::HttpRequest(const std::string &requestStr) {
   msg = requestStr;
@@ -32,13 +33,26 @@ HttpRequest::HttpRequest(const std::string &requestStr) {
 }
 std::string HttpRequest::url_prefix = "../resource";
 
-
+// std::string httpResponse = "HTTP/1.1 200 OK\r\n"
+//                            "Content-Type: text/html; charset=UTF-8\r\n"
+//                            "\r\n"
+//                            "<!DOCTYPE html>\n"
+//                            "<html>\n"
+//                            "<head>\n"
+//                            "<title>HTML Response</title>\n"
+//                            "</head>\n"
+//                            "<body>\n"
+//                            "<h1>Hello, this is a simple HTML response!</h1>\n"
+//                            "</body>\n"
+//                            "</html>\n";
 void httpHandle(HttpRequest &req) {
   std::string url;
   if (req.getMethod() == "GET") {
     url = HttpRequest::getUrlPrefix() + req.getPath();
-    std::cout << url << std::endl;
-    std::fstream read(url + "index.html");
+    //test
+    url += "index.html";
+    auto res=readFileToString(url);
+    
     
   }
 }

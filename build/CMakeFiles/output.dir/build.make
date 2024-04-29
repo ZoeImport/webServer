@@ -94,6 +94,7 @@ output: CMakeFiles/output.dir/main.cpp.o
 output: CMakeFiles/output.dir/build.make
 output: ../lib/libThreadPool.a
 output: ../lib/libTcpSocket.a
+output: ../lib/libTool.so
 output: ../lib/libHttpparse.a
 output: /usr/lib/libboost_unit_test_framework.so.1.85.0
 output: CMakeFiles/output.dir/link.txt

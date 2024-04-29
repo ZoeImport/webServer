@@ -166,6 +166,19 @@ TcpSocket/fast:
 .PHONY : TcpSocket/fast
 
 #=============================================================================
+# Target rules for targets named Tool
+
+# Build rule for target.
+Tool: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Tool
+.PHONY : Tool
+
+# fast build rule for target.
+Tool/fast:
+	$(MAKE) $(MAKESILENT) -f include/tools/CMakeFiles/Tool.dir/build.make include/tools/CMakeFiles/Tool.dir/build
+.PHONY : Tool/fast
+
+#=============================================================================
 # Target rules for targets named Httpparse
 
 # Build rule for target.
@@ -214,6 +227,7 @@ help:
 	@echo "... Httpparse"
 	@echo "... TcpSocket"
 	@echo "... ThreadPool"
+	@echo "... Tool"
 	@echo "... output"
 	@echo "... main.o"
 	@echo "... main.i"

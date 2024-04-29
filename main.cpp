@@ -72,7 +72,7 @@ using namespace std;
 
 string request("GET / HTTP/1.1\r\nHost: 127.0.0.1:8080\r\nUser-Agent: "
                "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) "
-               "Gecko/20100101 Firefox/125.0\r\nAccept: "
+               "Gecko/20100101 Firefox/125.l0\r\nAccept: "
                "text/html,application/xhtml+xml,application/xml;q=0.9,image/"
                "avif,image/webp,*/*;q=0.8\r\nAccept-Language: "
                "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0."
@@ -90,6 +90,5 @@ BOOST_AUTO_TEST_CASE(httphandle) {
 
 BOOST_AUTO_TEST_CASE(fileread) {
   auto res = readFileToString("../resource/index.html");
-  cout<<res<<endl;
-
-  }
+  cout << res << endl;
+}

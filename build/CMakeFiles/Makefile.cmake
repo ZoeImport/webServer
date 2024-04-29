@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../include/TcpSocket/CMakeLists.txt"
   "../include/httpParse/CMakeLists.txt"
   "../include/threadPool/CMakeLists.txt"
+  "../include/tools/CMakeLists.txt"
   "/usr/lib/cmake/Boost-1.85.0/BoostConfig.cmake"
   "/usr/lib/cmake/Boost-1.85.0/BoostConfigVersion.cmake"
   "/usr/lib/cmake/Boost-1.85.0/boostConfig.cmake"
@@ -66,6 +67,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/threadPool/CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/TcpSocket/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include/tools/CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/httpParse/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -74,5 +76,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/output.dir/DependInfo.cmake"
   "include/threadPool/CMakeFiles/ThreadPool.dir/DependInfo.cmake"
   "include/TcpSocket/CMakeFiles/TcpSocket.dir/DependInfo.cmake"
+  "include/tools/CMakeFiles/Tool.dir/DependInfo.cmake"
   "include/httpParse/CMakeFiles/Httpparse.dir/DependInfo.cmake"
   )

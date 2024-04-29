@@ -10,6 +10,10 @@
 /home/zoe/webServer/build/include/TcpSocket/CMakeFiles/test.dir
 /home/zoe/webServer/build/include/TcpSocket/CMakeFiles/edit_cache.dir
 /home/zoe/webServer/build/include/TcpSocket/CMakeFiles/rebuild_cache.dir
+/home/zoe/webServer/build/include/tools/CMakeFiles/Tool.dir
+/home/zoe/webServer/build/include/tools/CMakeFiles/test.dir
+/home/zoe/webServer/build/include/tools/CMakeFiles/edit_cache.dir
+/home/zoe/webServer/build/include/tools/CMakeFiles/rebuild_cache.dir
 /home/zoe/webServer/build/include/httpParse/CMakeFiles/Httpparse.dir
 /home/zoe/webServer/build/include/httpParse/CMakeFiles/test.dir
 /home/zoe/webServer/build/include/httpParse/CMakeFiles/edit_cache.dir

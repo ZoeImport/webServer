@@ -36,7 +36,5 @@ public:
   }
 };
 
-
-
 void httpHandle(HttpRequest &req);
 #endif

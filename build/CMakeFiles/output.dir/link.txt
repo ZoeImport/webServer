@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/output.dir/main.cpp.o -o output  ../lib/libThreadPool.a ../lib/libTcpSocket.a ../lib/libHttpparse.a /usr/lib/libboost_unit_test_framework.so.1.85.0 
+/usr/bin/c++ CMakeFiles/output.dir/main.cpp.o -o output  -Wl,-rpath,/home/zoe/webServer/lib ../lib/libThreadPool.a ../lib/libTcpSocket.a ../lib/libTool.so ../lib/libHttpparse.a /usr/lib/libboost_unit_test_framework.so.1.85.0 
