@@ -166,6 +166,19 @@ TcpSocket/fast:
 .PHONY : TcpSocket/fast
 
 #=============================================================================
+# Target rules for targets named Epoll
+
+# Build rule for target.
+Epoll: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Epoll
+.PHONY : Epoll
+
+# fast build rule for target.
+Epoll/fast:
+	$(MAKE) $(MAKESILENT) -f include/epoll/CMakeFiles/Epoll.dir/build.make include/epoll/CMakeFiles/Epoll.dir/build
+.PHONY : Epoll/fast
+
+#=============================================================================
 # Target rules for targets named Tool
 
 # Build rule for target.
@@ -190,6 +203,19 @@ Httpparse: cmake_check_build_system
 Httpparse/fast:
 	$(MAKE) $(MAKESILENT) -f include/httpParse/CMakeFiles/Httpparse.dir/build.make include/httpParse/CMakeFiles/Httpparse.dir/build
 .PHONY : Httpparse/fast
+
+#=============================================================================
+# Target rules for targets named webserver
+
+# Build rule for target.
+webserver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 webserver
+.PHONY : webserver
+
+# fast build rule for target.
+webserver/fast:
+	$(MAKE) $(MAKESILENT) -f include/webserver/CMakeFiles/webserver.dir/build.make include/webserver/CMakeFiles/webserver.dir/build
+.PHONY : webserver/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -224,11 +250,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... Epoll"
 	@echo "... Httpparse"
 	@echo "... TcpSocket"
 	@echo "... ThreadPool"
 	@echo "... Tool"
 	@echo "... output"
+	@echo "... webserver"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

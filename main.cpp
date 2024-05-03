@@ -1,12 +1,10 @@
-#include "include/TcpSocket/TcpSocket.h"
-#include "include/tools/tool.h"
-#include <iostream>
-#include <spdlog/common.h>
 #define BOOST_TEST_MODULE MyTest
-#include "include/httpParse/httpRequest.h"
+#include <cstring>
+#include <spdlog/common.h>
 #include <boost/test/unit_test.hpp>
 #include <boost/test/unit_test_suite.hpp>
-#include <fstream>
+#include "include/webserver/webserver.h"
+
 
 using namespace std;
 
@@ -81,14 +79,50 @@ string request("GET / HTTP/1.1\r\nHost: 127.0.0.1:8080\r\nUser-Agent: "
                "document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: "
                "none\r\nSec-Fetch-User: ?1\r\n\r\n");
 
-BOOST_AUTO_TEST_CASE(httphandle) {
-  HttpRequest req(request);
-  httpHandle(req);
-  // TcpSocket app(8080, true);
-  // app.httpHandleTest();
+// BOOST_AUTO_TEST_CASE(httphandle) {
+//   HttpRequest req(request);
+//   httpHandle(req);
+//   // TcpSocket app(8080, true);
+//   // app.httpHandleTest();
+// }
+
+// BOOST_AUTO_TEST_CASE(fileread) {
+//   auto res = readFileToString("../resource/index.html");
+//   cout << res << endl;
+// }
+
+// BOOST_AUTO_TEST_CASE(stringCopy) {
+//   char buf[10] = "123456789";
+//   string res(buf);
+//   cout<<res<<endl;
+// }
+
+// BOOST_AUTO_TEST_CASE(listen_http) {
+//   TcpSocket socket(8080, true);
+//   socket.httpHandle();
+// }
+
+// BOOST_AUTO_TEST_CASE(netFrameTest) {
+//   netFrame::Net net(8081);
+// }
+void HandleHome(int clientSocket) {
+    std::string response = "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHome Page";
+    send(clientSocket, response.c_str(), response.size(), 0);
 }
 
-BOOST_AUTO_TEST_CASE(fileread) {
-  auto res = readFileToString("../resource/index.html");
-  cout << res << endl;
+void HandleAbout(int clientSocket) {
+    std::string response = "HTTP/1.1 200 OK\r\nContent-Length: 14\r\n\r\nAbout Page";
+    send(clientSocket, response.c_str(), response.size(), 0);
+}
+
+BOOST_AUTO_TEST_CASE(netFrameTest) {
+  Router router;
+  router.Get("/home", [](int clientSocket) {
+    std::string response = "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHome Page";
+    send(clientSocket, response.c_str(), response.size(), 0);
+  });
+  router.Get("/index",HandleHome);
+
+  WebServer server(8081);
+  server.Start(router);
 }

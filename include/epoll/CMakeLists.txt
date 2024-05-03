@@ -5,5 +5,5 @@ include_directories(${INCLUDE_ROOT_PATH}/threadPool)
 include_directories(${INCLUDE_ROOT_PATH}/tools)
 include_directories(${PROJECT_SOURCE_DIR})
 aux_source_directory(${PROJECT_SOURCE_DIR} SRC)
-add_library(Epoll STATIC ${SRC})
+add_library(Epoll SHARED ${SRC})
 

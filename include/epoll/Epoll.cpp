@@ -84,7 +84,7 @@ void Epoll::epoll_deal(int readCount,
         // std::thread recv(
         //     [this, currfd, &func]() { this->epoll_recv(currfd, func); });
         // recv.join();
-        auto lambda = wrapFunc(&Epoll::epoll_recv, this, currfd, func);
+        auto lambda = std::bind(&Epoll::epoll_recv, this, currfd, func);
         this->pool_ptr.get()->enQueue(lambda);
         spdlog::info("recv task add to thread");
       }

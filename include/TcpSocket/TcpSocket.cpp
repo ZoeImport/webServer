@@ -118,10 +118,15 @@ int TcpSocket::httpHandle() {
     spdlog::info("recv buffer ");
     auto len = recv(cfd, buffer, sizeof(buffer), 0);
     std::cout << buffer << std::endl;
+    
     spdlog::info("recv request ,len :{}", len);
     if (len > 0) {
+      std::string req_str(buffer);
+      HttpRequest req(req_str);
+      auto msg= ::httpHandle(req);
       spdlog::info("ready to send response");
-      send(cfd, httpResponse.c_str(), httpResponse.size(), 0);
+      std::cout<<msg<<std::endl;
+      send(cfd, msg.c_str(), msg.size(), 0);
     } else if (len == 0) {
       spdlog::info("client close ");
       break;

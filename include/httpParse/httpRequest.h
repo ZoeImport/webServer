@@ -36,5 +36,6 @@ public:
   }
 };
 
-void httpHandle(HttpRequest &req);
+// void httpHandle(HttpRequest &req);
+std::string httpHandle(HttpRequest &req);
 #endif

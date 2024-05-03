@@ -92,10 +92,13 @@ output_EXTERNAL_OBJECTS =
 
 output: CMakeFiles/output.dir/main.cpp.o
 output: CMakeFiles/output.dir/build.make
-output: ../lib/libThreadPool.a
+output: /usr/local/lib/libspdlog.a
+output: ../lib/libThreadPool.so
 output: ../lib/libTcpSocket.a
+output: ../lib/libEpoll.so
 output: ../lib/libTool.so
-output: ../lib/libHttpparse.a
+output: ../lib/libHttpparse.so
+output: ../lib/libwebserver.so
 output: /usr/lib/libboost_unit_test_framework.so.1.85.0
 output: CMakeFiles/output.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable output"

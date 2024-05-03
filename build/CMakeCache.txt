@@ -272,6 +272,15 @@ boost_headers_DIR:PATH=/usr/lib/cmake/boost_headers-1.85.0
 boost_unit_test_framework_DIR:PATH=/usr/lib/cmake/boost_unit_test_framework-1.85.0
 
 //Value Computed by CMake
+netFrame_BINARY_DIR:STATIC=/home/zoe/webServer/build/include/net
+
+//Value Computed by CMake
+netFrame_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+netFrame_SOURCE_DIR:STATIC=/home/zoe/webServer/include/net
+
+//Value Computed by CMake
 output_BINARY_DIR:STATIC=/home/zoe/webServer/build
 
 //Value Computed by CMake
@@ -282,6 +291,15 @@ output_SOURCE_DIR:STATIC=/home/zoe/webServer
 
 //The directory containing a CMake configuration file for spdlog.
 spdlog_DIR:PATH=/usr/local/lib/cmake/spdlog
+
+//Value Computed by CMake
+webserver_BINARY_DIR:STATIC=/home/zoe/webServer/build/include/webserver
+
+//Value Computed by CMake
+webserver_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+webserver_SOURCE_DIR:STATIC=/home/zoe/webServer/include/webserver
 
 
 ########################
@@ -394,7 +412,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
