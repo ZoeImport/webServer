@@ -4,4 +4,5 @@ project(webserver)
 include_directories(${PROJECT_SOURCE_DIR})
 aux_source_directory(${PROJECT_SOURCE_DIR} SRC)
 add_library(webserver SHARED ${SRC})
+target_link_libraries(webserver PRIVATE Httpparse)
 

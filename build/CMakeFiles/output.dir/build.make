@@ -96,8 +96,6 @@ output: /usr/local/lib/libspdlog.a
 output: ../lib/libThreadPool.so
 output: ../lib/libTcpSocket.a
 output: ../lib/libEpoll.so
-output: ../lib/libTool.so
-output: ../lib/libHttpparse.so
 output: ../lib/libwebserver.so
 output: /usr/lib/libboost_unit_test_framework.so.1.85.0
 output: CMakeFiles/output.dir/link.txt

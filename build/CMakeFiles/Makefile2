@@ -188,8 +188,6 @@ include/webserver/clean: include/webserver/CMakeFiles/webserver.dir/clean
 CMakeFiles/output.dir/all: include/threadPool/CMakeFiles/ThreadPool.dir/all
 CMakeFiles/output.dir/all: include/TcpSocket/CMakeFiles/TcpSocket.dir/all
 CMakeFiles/output.dir/all: include/epoll/CMakeFiles/Epoll.dir/all
-CMakeFiles/output.dir/all: include/tools/CMakeFiles/Tool.dir/all
-CMakeFiles/output.dir/all: include/httpParse/CMakeFiles/Httpparse.dir/all
 CMakeFiles/output.dir/all: include/webserver/CMakeFiles/webserver.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/build
@@ -320,7 +318,7 @@ include/tools/CMakeFiles/Tool.dir/clean:
 # Target rules for target include/httpParse/CMakeFiles/Httpparse.dir
 
 # All Build rule for target.
-include/httpParse/CMakeFiles/Httpparse.dir/all:
+include/httpParse/CMakeFiles/Httpparse.dir/all: include/tools/CMakeFiles/Tool.dir/all
 	$(MAKE) $(MAKESILENT) -f include/httpParse/CMakeFiles/Httpparse.dir/build.make include/httpParse/CMakeFiles/Httpparse.dir/depend
 	$(MAKE) $(MAKESILENT) -f include/httpParse/CMakeFiles/Httpparse.dir/build.make include/httpParse/CMakeFiles/Httpparse.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=3,4,5 "Built target Httpparse"
@@ -328,7 +326,7 @@ include/httpParse/CMakeFiles/Httpparse.dir/all:
 
 # Build rule for subdir invocation for target.
 include/httpParse/CMakeFiles/Httpparse.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 include/httpParse/CMakeFiles/Httpparse.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 0
 .PHONY : include/httpParse/CMakeFiles/Httpparse.dir/rule
@@ -346,7 +344,8 @@ include/httpParse/CMakeFiles/Httpparse.dir/clean:
 # Target rules for target include/webserver/CMakeFiles/webserver.dir
 
 # All Build rule for target.
-include/webserver/CMakeFiles/webserver.dir/all:
+include/webserver/CMakeFiles/webserver.dir/all: include/tools/CMakeFiles/Tool.dir/all
+include/webserver/CMakeFiles/webserver.dir/all: include/httpParse/CMakeFiles/Httpparse.dir/all
 	$(MAKE) $(MAKESILENT) -f include/webserver/CMakeFiles/webserver.dir/build.make include/webserver/CMakeFiles/webserver.dir/depend
 	$(MAKE) $(MAKESILENT) -f include/webserver/CMakeFiles/webserver.dir/build.make include/webserver/CMakeFiles/webserver.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=14,15,16 "Built target webserver"
@@ -354,7 +353,7 @@ include/webserver/CMakeFiles/webserver.dir/all:
 
 # Build rule for subdir invocation for target.
 include/webserver/CMakeFiles/webserver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 include/webserver/CMakeFiles/webserver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zoe/webServer/build/CMakeFiles 0
 .PHONY : include/webserver/CMakeFiles/webserver.dir/rule

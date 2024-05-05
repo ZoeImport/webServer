@@ -1,10 +1,10 @@
 #define BOOST_TEST_MODULE MyTest
-#include <cstring>
-#include <spdlog/common.h>
+#include "include/webserver/router.h"
+#include "include/webserver/webserver.h"
 #include <boost/test/unit_test.hpp>
 #include <boost/test/unit_test_suite.hpp>
-#include "include/webserver/webserver.h"
-
+#include <cstring>
+#include <spdlog/common.h>
 
 using namespace std;
 
@@ -106,21 +106,52 @@ string request("GET / HTTP/1.1\r\nHost: 127.0.0.1:8080\r\nUser-Agent: "
 //   netFrame::Net net(8081);
 // }
 void HandleHome(int clientSocket) {
-    std::string response = "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHome Page";
-    send(clientSocket, response.c_str(), response.size(), 0);
+  std::string response =
+      "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHome Page";
+  send(clientSocket, response.c_str(), response.size(), 0);
 }
 
 void HandleAbout(int clientSocket) {
-    std::string response = "HTTP/1.1 200 OK\r\nContent-Length: 14\r\n\r\nAbout Page";
-    send(clientSocket, response.c_str(), response.size(), 0);
+  std::string response = "HTTP/1.1 200 OK\r\n"
+                         "Content-Type: text/html; charset=UTF-8\r\n"
+                         "\r\n"
+                         "<!DOCTYPE html>\n"
+                         "<html>\n"
+                         "<head>\n"
+                         "<title>HTML Response</title>\n"
+                         "</head>\n"
+                         "<body>\n"
+                         "<h1>Hello, this is a simple HTML response!</h1>\n"
+                         "</body>\n"
+                         "</html>\n";
+  send(clientSocket, response.c_str(), response.size(), 0);
 }
 
 BOOST_AUTO_TEST_CASE(netFrameTest) {
-  
-  // router.Get("/home", [](int clientSocket) {
-  //   std::string response = "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHome Page";
-  //   send(clientSocket, response.c_str(), response.size(), 0);
-  // });
-  Webserver server(8081);
-  
+  Router router;
+  router.Get("/home", []() {
+    std::string response = "HTTP/1.1 200 OK\r\n"
+                           "Content-Type: text/html; charset=UTF-8\r\n"
+                           "\r\n"
+                           "<!DOCTYPE html>\n"
+                           "<html>\n"
+                           "<head>\n"
+                           "<title>HTML Response</title>\n"
+                           "</head>\n"
+                           "<body>\n"
+                           "<h1>Hello, this is a simple HTML response!</h1>\n"
+                           "</body>\n"
+                           "</html>\n";
+    return response;
+    // send(clientSocket, response.c_str(), response.size(), 0);
+  });
+  router.Get("/about", []() {
+    std::string response =
+        "HTTP/1.1 200 OK\r\nContent-Type: text/plain; "
+        "charset=UTF-8\r\nContent-Length: 13\r\n\r\nHome Page";
+    return response;
+    // send(clientSocket, response.c_str(), response.size(), 0);
+  });
+
+  Webserver server(8082, router);
 }

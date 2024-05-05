@@ -1,3 +1,4 @@
+#include "router.h"
 #include <netinet/in.h>
 #include <sys/socket.h>
 
@@ -12,5 +13,5 @@ private:
   Socket _socket;
   
 public:
-  Webserver(int port);
+  Webserver(int port,Router router);
 };
