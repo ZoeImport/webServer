@@ -116,13 +116,11 @@ void HandleAbout(int clientSocket) {
 }
 
 BOOST_AUTO_TEST_CASE(netFrameTest) {
-  Router router;
-  router.Get("/home", [](int clientSocket) {
-    std::string response = "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHome Page";
-    send(clientSocket, response.c_str(), response.size(), 0);
-  });
-  router.Get("/index",HandleHome);
-
-  WebServer server(8081);
-  server.Start(router);
+  
+  // router.Get("/home", [](int clientSocket) {
+  //   std::string response = "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHome Page";
+  //   send(clientSocket, response.c_str(), response.size(), 0);
+  // });
+  Webserver server(8081);
+  
 }

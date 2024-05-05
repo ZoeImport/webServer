@@ -1,24 +1,16 @@
-#include <iostream>
-#include <map>
-#include <string>
-#include <sys/socket.h>
 #include <netinet/in.h>
-#include <unistd.h>
-#include "router.h"
+#include <sys/socket.h>
 
-class WebServer {
-private:
-    int serverSocket;
-    struct sockaddr_in serverAddr, clientAddr;
-    socklen_t clientAddrLen;
-
-public:
-    WebServer(int port=8080) ;
-
-    void Start(Router& router);
-
-    ~WebServer() {
-        close(serverSocket);
-    }
+struct Socket {
+  sockaddr_in addr;
+  int fd;
+  int cfd;
 };
 
+class Webserver {
+private:
+  Socket _socket;
+  
+public:
+  Webserver(int port);
+};

@@ -39,3 +39,5 @@ target_link_libraries(output Tool)
 target_link_libraries(output Httpparse)
 target_link_libraries(output webserver)
 target_link_libraries(output ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+# target_compile_options(output PUBLIC -g)
