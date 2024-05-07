@@ -98,6 +98,8 @@ output: ../lib/libTcpSocket.a
 output: ../lib/libEpoll.so
 output: ../lib/libwebserver.so
 output: /usr/lib/libboost_unit_test_framework.so.1.85.0
+output: ../lib/libHttpparse.so
+output: ../lib/libTool.so
 output: CMakeFiles/output.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable output"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/output.dir/link.txt --verbose=$(VERBOSE)

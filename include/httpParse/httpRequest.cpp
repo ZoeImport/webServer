@@ -47,20 +47,20 @@ std::string HttpRequest::url_prefix = "../resource";
 //                            "<h1>Hello, this is a simple HTML response!</h1>\n"
 //                            "</body>\n"
 //                            "</html>\n";
-std::string  httpHandle(HttpRequest &req) {
-  std::string url;
-  if (req.getMethod() == "GET") {
+// std::string  httpHandle(HttpRequest &req) {
+//   std::string url;
+//   if (req.getMethod() == "GET") {
     
-    url = HttpRequest::getUrlPrefix() + req.getPath();
-    //test
-    url += "index.html";
-    auto pagestream=readFileToString(url);
-    HttpResponse reponse(pagestream);
-    reponse.setVersion("HTTP/1.1");
-    reponse.setStatusCode(200);
-    reponse.setMsg("ok");
-    auto res = reponse.toString();
-    return res;
-  }
-  return NULL;
-}
+//     url = HttpRequest::getUrlPrefix() + req.getPath();
+//     //test
+//     url += "index.html";
+//     auto pagestream=readFileToString(url);
+//     HttpResponse reponse(pagestream);
+//     reponse.setVersion("HTTP/1.1");
+//     reponse.setStatusCode(200);
+//     reponse.setMsg("ok");
+//     auto res = reponse.toString();
+//     return res;
+//   }
+//   return NULL;
+// }

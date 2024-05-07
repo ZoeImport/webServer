@@ -3,7 +3,9 @@
 #include <functional>
 #include <string>
 #include <unordered_map>
-using Request_Handle = std::function<std::string()>;
+#include "../httpParse/httpResponse.h"
+
+using Request_Handle = std::function<HttpResponse()>;
 class Router {
 private:
   int _cfd;

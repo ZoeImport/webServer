@@ -36,7 +36,7 @@ target_link_libraries(output ThreadPool)
 target_link_libraries(output TcpSocket)
 target_link_libraries(output Epoll)
 # target_link_libraries(output Tool)
-# target_link_libraries(output Httpparse)
+target_link_libraries(output Httpparse)
 target_link_libraries(output webserver)
 target_link_libraries(output ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
 

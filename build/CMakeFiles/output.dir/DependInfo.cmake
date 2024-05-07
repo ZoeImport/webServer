@@ -17,6 +17,8 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/zoe/webServer/build/include/TcpSocket/CMakeFiles/TcpSocket.dir/DependInfo.cmake"
   "/home/zoe/webServer/build/include/epoll/CMakeFiles/Epoll.dir/DependInfo.cmake"
   "/home/zoe/webServer/build/include/webserver/CMakeFiles/webserver.dir/DependInfo.cmake"
+  "/home/zoe/webServer/build/include/httpParse/CMakeFiles/Httpparse.dir/DependInfo.cmake"
+  "/home/zoe/webServer/build/include/tools/CMakeFiles/Tool.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

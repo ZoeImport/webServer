@@ -53,7 +53,7 @@ Webserver::Webserver(int port, Router router) {
       close(_socket.cfd);
     } else if (len == 0) {
       std::cerr << "len == 0" << std::endl;
-      break;
+      continue;
 
     } else {
       std::cerr << "recv error" << std::endl;

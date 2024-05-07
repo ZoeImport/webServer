@@ -188,6 +188,8 @@ include/webserver/clean: include/webserver/CMakeFiles/webserver.dir/clean
 CMakeFiles/output.dir/all: include/threadPool/CMakeFiles/ThreadPool.dir/all
 CMakeFiles/output.dir/all: include/TcpSocket/CMakeFiles/TcpSocket.dir/all
 CMakeFiles/output.dir/all: include/epoll/CMakeFiles/Epoll.dir/all
+CMakeFiles/output.dir/all: include/tools/CMakeFiles/Tool.dir/all
+CMakeFiles/output.dir/all: include/httpParse/CMakeFiles/Httpparse.dir/all
 CMakeFiles/output.dir/all: include/webserver/CMakeFiles/webserver.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/build

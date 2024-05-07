@@ -12,6 +12,7 @@ std::string readFileToString(std::string path) {
     }
   } else {
     spdlog::error("cannot open file!");
+    return std::string("_ERROR_PATH");
   }
   return result;
 }
