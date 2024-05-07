@@ -13,8 +13,11 @@ void Router::Route(std::string url) {
     auto debug_temp=response.to_string();
     send(this->_cfd, debug_temp.c_str(), debug_temp.size(), 0);
   } else {
-    std::string response =
-        "HTTP/1.1 404 Not Found\r\nContent-Length: 13\r\n\r\n404 Not Found";
-    send(this->_cfd, response.c_str(), response.size(), 0);
+    HttpResponse page_404("text_html", "404.html");
+    page_404.set_status_code(404);
+    auto temp=page_404.to_string();
+    // std::string response =
+    //     "HTTP/1.1 404 Not Found\r\nContent-Length: 13\r\n\r\n404 Not Found";
+    send(this->_cfd, temp.c_str(), temp.size(), 0);
   }
 }

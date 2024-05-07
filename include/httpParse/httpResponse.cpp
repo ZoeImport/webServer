@@ -46,7 +46,7 @@ bool HttpResponse::put_headers(std::pair<std::string, std::string> _pair) {
 std::string HttpResponse::to_string() {
 
   // create line
-  
+
   setLine(_status_code);
 
   // create header
@@ -87,8 +87,6 @@ void HttpResponse::return_html(std::string body) {
   }
   if (html_body == "_ERROR_PATH") {
     _status_code = 404;
-  } else {
-    _status_code = 200;
   }
   _body = html_body;
 }
