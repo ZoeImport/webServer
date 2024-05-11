@@ -1,9 +1,9 @@
 #pragma once
 
+#include "../httpParse/httpResponse.h"
 #include <functional>
 #include <string>
 #include <unordered_map>
-#include "../httpParse/httpResponse.h"
 
 using Request_Handle = std::function<HttpResponse()>;
 class Router {
@@ -15,5 +15,6 @@ public:
   Router() = default;
   inline void set_cfd(int connect_fd) { _cfd = connect_fd; }
   void Get(std::string url, Request_Handle handFunc);
+  void Post(std::string url, Request_Handle handFunc);
   void Route(std::string url);
 };

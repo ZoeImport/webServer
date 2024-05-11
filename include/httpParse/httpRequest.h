@@ -2,6 +2,7 @@
 #define _HTTP_REQUEST_
 #include <sstream>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 class HttpRequest {
@@ -10,9 +11,8 @@ private:
   std::string method;
   std::string path;
   std::string version;
-  std::vector<std::pair<std::string, std::string>> headers;
+  std::unordered_map<std::string,std::string> headers;
   std::string body;
-
   static std::string url_prefix;
 
 public:
@@ -26,7 +26,7 @@ public:
 
   inline std::string getVersion() const { return version; }
 
-  inline std::vector<std::pair<std::string, std::string>> getHeaders() const {
+  inline std::unordered_map<std::string,std::string>  getHeaders() const {
     return headers;
   }
 

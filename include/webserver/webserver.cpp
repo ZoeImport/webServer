@@ -40,7 +40,7 @@ Webserver::Webserver(int port, Router router) {
       return;
     }
 
-    std::cout << "begin to handle" << std::endl;
+    // std::cout << "begin to handle" << std::endl;
     char buffer[1024];
     auto len = recv(_socket.cfd, buffer, sizeof(buffer), 0);
 
@@ -48,7 +48,13 @@ Webserver::Webserver(int port, Router router) {
 
     if (len > 0) {
       router.set_cfd(_socket.cfd);
-      std::cout << "buffer:" << std::endl << buffer << std::endl;
+      // std::cout << "buffer:" << std::endl << buffer << std::endl;
+      std::cout<<"====================="<<std::endl;
+      // std::cout << request.getMethod() << std::endl;
+      for (auto &x :request.getHeaders()) {
+        std::cout<<x.first<<"="<<x.second<<std::endl;
+      }
+      // std::cout <<"body:::::"<<request.getBody() << std::endl;
       router.Route(request.getPath());
       close(_socket.cfd);
     } else if (len == 0) {

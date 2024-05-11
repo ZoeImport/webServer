@@ -1,12 +1,16 @@
 #include "httpRequest.h"
-#include <boost/test/unit_test_suite.hpp>
-#include <cstddef>
-#include <fstream>
-#include <iostream>
 #include "../tools/tool.h"
 #include "httpResponse.h"
+#include <algorithm>
+#include <boost/test/unit_test_suite.hpp>
+#include <cstddef>
+#include <cstdio>
+#include <fstream>
+#include <iostream>
+#include <ostream>
 
 HttpRequest::HttpRequest(const std::string &requestStr) {
+
   msg = requestStr;
   std::stringstream ss(requestStr);
   std::string line;
@@ -23,15 +27,24 @@ HttpRequest::HttpRequest(const std::string &requestStr) {
     std::string headerName, headerValue;
     std::getline(headerStream, headerName, ':');
     std::getline(headerStream, headerValue);
-    headers.emplace_back(headerName, headerValue);
+    headers[headerName] = headerValue;
   }
 
+
+
+
   // 解析请求体（如果有的话）
-  if (ss.rdbuf()->in_avail() > 0) {
-    std::stringstream bodyStream;
-    bodyStream << ss.rdbuf();
-    body = bodyStream.str();
+  if (headers.count("Content-Length") > 0) {
+    // std::cout << "has body" << std::endl;
+    int contentLength = std::stoi(headers["Content-Length"]);
+    if (contentLength > 0) {
+      std::stringstream bodyStream;
+      bodyStream << ss.rdbuf();
+      body = bodyStream.str().substr(0, contentLength);
+    }
   }
+  // std::cout<<"===========\n";
+  // std::cout<<body<<std::endl;
 }
 std::string HttpRequest::url_prefix = "../resource";
 
@@ -44,13 +57,14 @@ std::string HttpRequest::url_prefix = "../resource";
 //                            "<title>HTML Response</title>\n"
 //                            "</head>\n"
 //                            "<body>\n"
-//                            "<h1>Hello, this is a simple HTML response!</h1>\n"
+//                            "<h1>Hello, this is a simple HTML
+//                            response!</h1>\n"
 //                            "</body>\n"
 //                            "</html>\n";
 // std::string  httpHandle(HttpRequest &req) {
 //   std::string url;
 //   if (req.getMethod() == "GET") {
-    
+
 //     url = HttpRequest::getUrlPrefix() + req.getPath();
 //     //test
 //     url += "index.html";

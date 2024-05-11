@@ -1,5 +1,6 @@
 #include "include/httpParse/httpResponse.h"
 #include <iostream>
+#include <ostream>
 #include <string>
 #define BOOST_TEST_MODULE MyTest
 #include "include/webserver/router.h"
@@ -10,6 +11,7 @@
 #include <spdlog/common.h>
 
 using namespace std;
+
 
 // THREAD_POOL_ACTIVE
 
@@ -166,6 +168,11 @@ BOOST_AUTO_TEST_CASE(HTTPRESPONSE) {
     HttpResponse resp("text_html", "index.html");
     return resp;
   });
+  router.Post("/login", []() -> HttpResponse {
+    HttpResponse resp("text_html", "login.html");
+    return resp;
+  });
 
-  Webserver server(8080, router);
+  Webserver server(8081, router);
+  
 }
