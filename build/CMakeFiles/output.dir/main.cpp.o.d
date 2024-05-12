@@ -112,6 +112,14 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/c++/14.1.1/bits/node_handle.h \
  /usr/include/c++/14.1.1/bits/erase_if.h /usr/include/c++/14.1.1/utility \
  /usr/include/c++/14.1.1/bits/stl_relops.h \
+ /usr/include/c++/14.1.1/algorithm \
+ /usr/include/c++/14.1.1/bits/stl_algo.h \
+ /usr/include/c++/14.1.1/bits/algorithmfwd.h \
+ /usr/include/c++/14.1.1/bits/stl_heap.h \
+ /usr/include/c++/14.1.1/bits/uniform_int_dist.h \
+ /usr/include/c++/14.1.1/bits/stl_tempbuf.h \
+ /usr/include/c++/14.1.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/14.1.1/pstl/execution_defs.h \
  /usr/include/c++/14.1.1/iostream /usr/include/c++/14.1.1/ostream \
  /usr/include/c++/14.1.1/ios /usr/include/c++/14.1.1/exception \
  /usr/include/c++/14.1.1/bits/exception_ptr.h \
@@ -147,17 +155,48 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/c++/14.1.1/bits/locale_facets.tcc \
  /usr/include/c++/14.1.1/bits/basic_ios.tcc \
  /usr/include/c++/14.1.1/bits/ostream.tcc /usr/include/c++/14.1.1/istream \
- /usr/include/c++/14.1.1/bits/istream.tcc \
- /home/zoe/webServer/include/webserver/router.h \
- /home/zoe/webServer/include/webserver/../httpParse/httpResponse.h \
- /usr/include/c++/14.1.1/functional \
- /usr/include/c++/14.1.1/bits/std_function.h \
- /usr/include/c++/14.1.1/vector \
+ /usr/include/c++/14.1.1/bits/istream.tcc /usr/include/c++/14.1.1/regex \
+ /usr/include/c++/14.1.1/bitset /usr/include/c++/14.1.1/locale \
+ /usr/include/c++/14.1.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/14.1.1/ctime \
+ /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/14.1.1/bits/codecvt.h \
+ /usr/include/c++/14.1.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14.1.1/bits/locale_conv.h \
+ /usr/include/c++/14.1.1/sstream /usr/include/c++/14.1.1/bits/sstream.tcc \
+ /usr/include/c++/14.1.1/stack /usr/include/c++/14.1.1/deque \
  /usr/include/c++/14.1.1/bits/stl_uninitialized.h \
+ /usr/include/c++/14.1.1/bits/stl_deque.h \
+ /usr/include/c++/14.1.1/bits/deque.tcc \
+ /usr/include/c++/14.1.1/bits/stl_stack.h \
+ /usr/include/c++/14.1.1/bits/shared_ptr.h \
+ /usr/include/c++/14.1.1/bits/shared_ptr_base.h \
+ /usr/include/c++/14.1.1/bits/allocated_ptr.h \
+ /usr/include/c++/14.1.1/bits/unique_ptr.h \
+ /usr/include/c++/14.1.1/ext/concurrence.h \
+ /usr/include/c++/14.1.1/bits/std_function.h \
+ /usr/include/c++/14.1.1/bits/stl_tree.h \
+ /usr/include/c++/14.1.1/bits/stl_map.h \
  /usr/include/c++/14.1.1/bits/stl_vector.h \
  /usr/include/c++/14.1.1/bits/stl_bvector.h \
- /usr/include/c++/14.1.1/bits/vector.tcc /usr/include/c++/14.1.1/array \
- /usr/include/c++/14.1.1/compare \
+ /usr/include/c++/14.1.1/bits/vector.tcc \
+ /usr/include/c++/14.1.1/bits/regex_constants.h \
+ /usr/include/c++/14.1.1/bits/regex_error.h \
+ /usr/include/c++/14.1.1/bits/regex_automaton.h \
+ /usr/include/c++/14.1.1/bits/regex_automaton.tcc \
+ /usr/include/c++/14.1.1/bits/regex_scanner.h \
+ /usr/include/c++/14.1.1/bits/regex_scanner.tcc \
+ /usr/include/c++/14.1.1/bits/regex_compiler.h \
+ /usr/include/c++/14.1.1/bits/regex_compiler.tcc \
+ /usr/include/c++/14.1.1/bits/regex.h \
+ /usr/include/c++/14.1.1/bits/regex.tcc \
+ /usr/include/c++/14.1.1/bits/regex_executor.h \
+ /usr/include/c++/14.1.1/bits/regex_executor.tcc \
+ /home/zoe/webServer/include/webserver/router.h \
+ /home/zoe/webServer/include/webserver/../httpParse/httpResponse.h \
+ /usr/include/c++/14.1.1/functional /usr/include/c++/14.1.1/vector \
+ /usr/include/c++/14.1.1/array /usr/include/c++/14.1.1/compare \
  /home/zoe/webServer/include/webserver/webserver.h \
  /usr/include/netinet/in.h /usr/include/bits/stdint-uintn.h \
  /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
@@ -366,7 +405,6 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/boost/test/detail/fwd_decl.hpp \
  /usr/include/boost/test/detail/log_level.hpp \
  /usr/include/boost/test/utils/wrap_stringstream.hpp \
- /usr/include/c++/14.1.1/sstream /usr/include/c++/14.1.1/bits/sstream.tcc \
  /usr/include/boost/test/tools/assertion_result.hpp \
  /usr/include/boost/test/utils/class_properties.hpp \
  /usr/include/boost/call_traits.hpp \
@@ -393,20 +431,13 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
  /usr/include/boost/core/checked_delete.hpp \
  /usr/include/c++/14.1.1/memory \
- /usr/include/c++/14.1.1/bits/stl_tempbuf.h \
  /usr/include/c++/14.1.1/bits/stl_raw_storage_iter.h \
  /usr/include/c++/14.1.1/bits/align.h \
- /usr/include/c++/14.1.1/bits/unique_ptr.h \
- /usr/include/c++/14.1.1/bits/shared_ptr.h \
- /usr/include/c++/14.1.1/bits/shared_ptr_base.h \
- /usr/include/c++/14.1.1/bits/allocated_ptr.h \
- /usr/include/c++/14.1.1/ext/concurrence.h \
  /usr/include/c++/14.1.1/bits/shared_ptr_atomic.h \
  /usr/include/c++/14.1.1/bits/atomic_base.h \
  /usr/include/c++/14.1.1/bits/atomic_lockfree_defines.h \
  /usr/include/c++/14.1.1/backward/auto_ptr.h \
  /usr/include/c++/14.1.1/pstl/glue_memory_defs.h \
- /usr/include/c++/14.1.1/pstl/execution_defs.h \
  /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
  /usr/include/boost/throw_exception.hpp \
  /usr/include/boost/exception/exception.hpp \
@@ -424,12 +455,6 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/boost/core/detail/sp_thread_pause.hpp \
  /usr/include/boost/core/detail/sp_thread_yield.hpp \
  /usr/include/boost/core/detail/sp_thread_sleep.hpp \
- /usr/include/c++/14.1.1/algorithm \
- /usr/include/c++/14.1.1/bits/stl_algo.h \
- /usr/include/c++/14.1.1/bits/algorithmfwd.h \
- /usr/include/c++/14.1.1/bits/stl_heap.h \
- /usr/include/c++/14.1.1/bits/uniform_int_dist.h \
- /usr/include/c++/14.1.1/pstl/glue_algorithm_defs.h \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
  /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
@@ -576,8 +601,6 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/boost/test/detail/throw_exception.hpp \
  /usr/include/boost/test/tree/auto_registration.hpp \
  /usr/include/boost/test/tree/test_unit.hpp /usr/include/c++/14.1.1/map \
- /usr/include/c++/14.1.1/bits/stl_tree.h \
- /usr/include/c++/14.1.1/bits/stl_map.h \
  /usr/include/c++/14.1.1/bits/stl_multimap.h \
  /usr/include/boost/test/tree/test_case_template.hpp \
  /usr/include/boost/test/utils/algorithm.hpp \
@@ -626,7 +649,7 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/spdlog/details/null_mutex.h /usr/include/c++/14.1.1/atomic \
  /usr/include/spdlog/tweakme.h /usr/include/c++/14.1.1/chrono \
  /usr/include/c++/14.1.1/bits/chrono.h /usr/include/c++/14.1.1/ratio \
- /usr/include/c++/14.1.1/cstdint /usr/include/c++/14.1.1/ctime \
+ /usr/include/c++/14.1.1/cstdint \
  /usr/include/c++/14.1.1/bits/parse_numbers.h \
  /usr/include/spdlog/fmt/fmt.h /usr/include/fmt/core.h \
  /usr/include/c++/14.1.1/iterator \

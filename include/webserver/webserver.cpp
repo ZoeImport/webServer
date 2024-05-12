@@ -8,6 +8,8 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+int Webserver::_connect_count = 0;
+
 Webserver::Webserver(int port, Router router) {
 
   _socket.fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -48,13 +50,11 @@ Webserver::Webserver(int port, Router router) {
 
     if (len > 0) {
       router.set_cfd(_socket.cfd);
-      // std::cout << "buffer:" << std::endl << buffer << std::endl;
-      std::cout<<"====================="<<std::endl;
-      // std::cout << request.getMethod() << std::endl;
-      for (auto &x :request.getHeaders()) {
-        std::cout<<x.first<<"="<<x.second<<std::endl;
-      }
-      // std::cout <<"body:::::"<<request.getBody() << std::endl;
+
+      std::cout << "==========" << " the " << (++_connect_count) << "th message "
+                << "===========" << std::endl;
+      std::cout << "buffer:" << std::endl << buffer << std::endl;
+
       router.Route(request.getPath());
       close(_socket.cfd);
     } else if (len == 0) {

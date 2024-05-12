@@ -1,7 +1,11 @@
 #include "include/httpParse/httpResponse.h"
+#include <algorithm>
 #include <iostream>
 #include <ostream>
+#include <regex>
+#include <sstream>
 #include <string>
+#include <unordered_map>
 #define BOOST_TEST_MODULE MyTest
 #include "include/webserver/router.h"
 #include "include/webserver/webserver.h"
@@ -10,8 +14,8 @@
 #include <cstring>
 #include <spdlog/common.h>
 
-using namespace std;
 
+using namespace std;
 
 // THREAD_POOL_ACTIVE
 
@@ -73,16 +77,16 @@ using namespace std;
 //   cout << req.getBody() << endl;
 // }
 
-string request("GET / HTTP/1.1\r\nHost: 127.0.0.1:8080\r\nUser-Agent: "
-               "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) "
-               "Gecko/20100101 Firefox/125.l0\r\nAccept: "
-               "text/html,application/xhtml+xml,application/xml;q=0.9,image/"
-               "avif,image/webp,*/*;q=0.8\r\nAccept-Language: "
-               "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0."
-               "2\r\nAccept-Encoding: gzip, deflate, br\r\nConnection: "
-               "keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest: "
-               "document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: "
-               "none\r\nSec-Fetch-User: ?1\r\n\r\n");
+// string request("GET / HTTP/1.1\r\nHost: 127.0.0.1:8080\r\nUser-Agent: "
+//                "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) "
+//                "Gecko/20100101 Firefox/125.l0\r\nAccept: "
+//                "text/html,application/xhtml+xml,application/xml;q=0.9,image/"
+//                "avif,image/webp,*/*;q=0.8\r\nAccept-Language: "
+//                "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0."
+//                "2\r\nAccept-Encoding: gzip, deflate, br\r\nConnection: "
+//                "keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest:
+//                " "document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: "
+//                "none\r\nSec-Fetch-User: ?1\r\n\r\n");
 
 // BOOST_AUTO_TEST_CASE(httphandle) {
 //   HttpRequest req(request);
@@ -162,6 +166,85 @@ void HandleAbout(int clientSocket) {
 //   Webserver server(8082, router);
 // }
 
+// BOOST_AUTO_TEST_CASE(HTTPRESPONSE) {
+//   Router router;
+//   router.Get("/home", []() -> HttpResponse {
+//     HttpResponse resp("text_html", "index.html");
+//     return resp;
+//   });
+//   router.Post("/login", []() -> HttpResponse {
+//     HttpResponse resp("text_html", "login.html");
+//     return resp;
+//   });
+
+//   Webserver server(8081, router);
+// }
+
+BOOST_AUTO_TEST_CASE(httpRequest) {
+
+ std::string request =
+    "POST /login HTTP/1.1\r\n"
+    "Host: 127.0.0.1:8081\r\n"
+    "Connection: keep-alive\r\n"
+    "Content-Length: 37\r\n"
+    "sec-ch-ua: \"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"\r\n"
+    "Accept: application/json, text/plain, */*\r\n"
+    "Content-Type: application/json\r\n"
+    "sec-ch-ua-mobile: ?0\r\n"
+    "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\r\n"
+    "sec-ch-ua-platform: \"Windows\"\r\n"
+    "Origin: http://127.0.0.1:8081\r\n"
+    "Sec-Fetch-Site: same-origin\r\n"
+    "Sec-Fetch-Mode: cors\r\n"
+    "Sec-Fetch-Dest: empty\r\n"
+    "Referer: http://127.0.0.1:8081/login\r\n"
+    "Accept-Encoding: gzip, deflate, br, zstd\r\n"
+    "Accept-Language: zh-CN,zh;q=0.9\r\n"
+    "\r\n"
+    "{\"username\":\"aaaaa\",\"password\":\"ccc\"}";
+
+;
+  int header_pos = request.find_first_of("\r\n");
+  string line = request.substr(0, header_pos);
+
+  int body_pos = request.find_last_of("\r\n");
+  string body = request.substr(body_pos, request.size() - body_pos);
+
+  string header = request.substr(header_pos, body_pos - header_pos);
+
+
+  string method;
+  string path;
+  string version;
+  stringstream line_ss(line);
+  line_ss >> method >> path >> version;
+  cout<<"method:"<<method<<" path:"<<path<<" version:"<<version<<endl;
+
+  unordered_map<string,string> header_table;
+  string header_line;
+  stringstream header_ss(header);
+  
+  while (getline(header_ss, header_line, '\n')) {
+    // cout<<header_line<<endl;
+    int split = header_line.find(":");
+    if (split<0) {
+      continue;
+    }
+    int len=header_line.size();
+    header_table[header_line.substr(0,split)]=header_line.substr(split+2,header_line.size()-split-3);
+    // cout << split << "::"  << len << endl;
+  }
+
+  for (auto &kv :header_table) {
+    cout<<kv.first<<"="<<kv.second<<endl;
+  }
+  
+  // cout << "line:" <<endl <<line << endl;
+  // cout << "header:" << endl<<header << endl;
+  cout << "body:" <<endl<< body << endl;
+}
+
+
 BOOST_AUTO_TEST_CASE(HTTPRESPONSE) {
   Router router;
   router.Get("/home", []() -> HttpResponse {
@@ -174,5 +257,4 @@ BOOST_AUTO_TEST_CASE(HTTPRESPONSE) {
   });
 
   Webserver server(8081, router);
-  
 }

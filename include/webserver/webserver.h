@@ -11,7 +11,7 @@ struct Socket {
 class Webserver {
 private:
   Socket _socket;
-  
+  static int _connect_count;
 public:
   Webserver(int port,Router router);
 };
