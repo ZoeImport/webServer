@@ -1,5 +1,5 @@
 #include <fstream>
-#include <spdlog/spdlog.h>
+#include <iostream>
 #include <string>
 
 std::string readFileToString(std::string path) {
@@ -11,7 +11,7 @@ std::string readFileToString(std::string path) {
       result += (line + "\n");
     }
   } else {
-    spdlog::error("cannot open file!");
+    std::cerr<<"cannot open file!";
     return std::string("_ERROR_PATH");
   }
   return result;

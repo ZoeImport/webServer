@@ -92,12 +92,8 @@ output_EXTERNAL_OBJECTS =
 
 output: CMakeFiles/output.dir/main.cpp.o
 output: CMakeFiles/output.dir/build.make
-output: /usr/lib/libspdlog.so.1.14.1
-output: /home/zoe/webServer/lib/libThreadPool.so
-output: /home/zoe/webServer/lib/libTcpSocket.a
 output: /home/zoe/webServer/lib/libwebserver.so
 output: /usr/lib/libboost_unit_test_framework.so.1.83.0
-output: /usr/lib/libfmt.so.10.2.0
 output: /home/zoe/webServer/lib/libHttpparse.so
 output: /home/zoe/webServer/lib/libTool.so
 output: CMakeFiles/output.dir/link.txt

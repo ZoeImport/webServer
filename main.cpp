@@ -1,3 +1,4 @@
+#include "include/httpParse/httpRequest.h"
 #include "include/httpParse/httpResponse.h"
 #include <algorithm>
 #include <iostream>
@@ -13,7 +14,6 @@
 #include <boost/test/unit_test_suite.hpp>
 #include <cstring>
 #include <spdlog/common.h>
-
 
 using namespace std;
 
@@ -180,79 +180,102 @@ void HandleAbout(int clientSocket) {
 //   Webserver server(8081, router);
 // }
 
-BOOST_AUTO_TEST_CASE(httpRequest) {
+// BOOST_AUTO_TEST_CASE(httpRequest) {
 
- std::string request =
-    "POST /login HTTP/1.1\r\n"
-    "Host: 127.0.0.1:8081\r\n"
-    "Connection: keep-alive\r\n"
-    "Content-Length: 37\r\n"
-    "sec-ch-ua: \"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"\r\n"
-    "Accept: application/json, text/plain, */*\r\n"
-    "Content-Type: application/json\r\n"
-    "sec-ch-ua-mobile: ?0\r\n"
-    "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\r\n"
-    "sec-ch-ua-platform: \"Windows\"\r\n"
-    "Origin: http://127.0.0.1:8081\r\n"
-    "Sec-Fetch-Site: same-origin\r\n"
-    "Sec-Fetch-Mode: cors\r\n"
-    "Sec-Fetch-Dest: empty\r\n"
-    "Referer: http://127.0.0.1:8081/login\r\n"
-    "Accept-Encoding: gzip, deflate, br, zstd\r\n"
-    "Accept-Language: zh-CN,zh;q=0.9\r\n"
-    "\r\n"
-    "{\"username\":\"aaaaa\",\"password\":\"ccc\"}";
+//  std::string request =
+//     "POST /login HTTP/1.1\r\n"
+//     "Host: 127.0.0.1:8081\r\n"
+//     "Connection: keep-alive\r\n"
+//     "Content-Length: 37\r\n"
+//     "sec-ch-ua: \"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\",
+//     \"Not-A.Brand\";v=\"99\"\r\n" "Accept: application/json, text/plain,
+//     */*\r\n" "Content-Type: application/json\r\n" "sec-ch-ua-mobile: ?0\r\n"
+//     "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+//     (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\r\n"
+//     "sec-ch-ua-platform: \"Windows\"\r\n"
+//     "Origin: http://127.0.0.1:8081\r\n"
+//     "Sec-Fetch-Site: same-origin\r\n"
+//     "Sec-Fetch-Mode: cors\r\n"
+//     "Sec-Fetch-Dest: empty\r\n"
+//     "Referer: http://127.0.0.1:8081/login\r\n"
+//     "Accept-Encoding: gzip, deflate, br, zstd\r\n"
+//     "Accept-Language: zh-CN,zh;q=0.9\r\n"
+//     "\r\n"
+//     "{\"username\":\"aaaaa\",\"password\":\"ccc\"}";
 
-;
-  int header_pos = request.find_first_of("\r\n");
-  string line = request.substr(0, header_pos);
+// ;
+//   int header_pos = request.find_first_of("\r\n");
+//   string line = request.substr(0, header_pos);
 
-  int body_pos = request.find_last_of("\r\n");
-  string body = request.substr(body_pos, request.size() - body_pos);
+//   int body_pos = request.find_last_of("\r\n");
+//   string body = request.substr(body_pos, request.size() - body_pos);
 
-  string header = request.substr(header_pos, body_pos - header_pos);
+//   string header = request.substr(header_pos, body_pos - header_pos);
+
+//   string method;
+//   string path;
+//   string version;
+//   stringstream line_ss(line);
+//   line_ss >> method >> path >> version;
+//   cout<<"method:"<<method<<" path:"<<path<<" version:"<<version<<endl;
+
+//   unordered_map<string,string> header_table;
+//   string header_line;
+//   stringstream header_ss(header);
+
+//   while (getline(header_ss, header_line, '\n')) {
+//     // cout<<header_line<<endl;
+//     int split = header_line.find(":");
+//     if (split<0) {
+//       continue;
+//     }
+//     int len=header_line.size();
+//     header_table[header_line.substr(0,split)]=header_line.substr(split+2,header_line.size()-split-3);
+//     // cout << split << "::"  << len << endl;
+//   }
+
+//   for (auto &kv :header_table) {
+//     cout<<kv.first<<"="<<kv.second<<endl;
+//   }
+
+//   // cout << "line:" <<endl <<line << endl;
+//   // cout << "header:" << endl<<header << endl;
+//   cout << "body:" <<endl<< body << endl;
+// }
 
 
-  string method;
-  string path;
-  string version;
-  stringstream line_ss(line);
-  line_ss >> method >> path >> version;
-  cout<<"method:"<<method<<" path:"<<path<<" version:"<<version<<endl;
-
-  unordered_map<string,string> header_table;
-  string header_line;
-  stringstream header_ss(header);
-  
-  while (getline(header_ss, header_line, '\n')) {
-    // cout<<header_line<<endl;
-    int split = header_line.find(":");
-    if (split<0) {
-      continue;
-    }
-    int len=header_line.size();
-    header_table[header_line.substr(0,split)]=header_line.substr(split+2,header_line.size()-split-3);
-    // cout << split << "::"  << len << endl;
-  }
-
-  for (auto &kv :header_table) {
-    cout<<kv.first<<"="<<kv.second<<endl;
-  }
-  
-  // cout << "line:" <<endl <<line << endl;
-  // cout << "header:" << endl<<header << endl;
-  cout << "body:" <<endl<< body << endl;
-}
-
+/**
+         application/json：用于指示实体主体是 JSON 格式的数据。
+         application/xml：用于指示实体主体是 XML 格式的数据。
+         text/plain：用于指示实体主体是纯文本格式的数据。
+         text/html：用于指示实体主体是 HTML 格式的数据。
+         multipart/form-data：用于指示实体主体包含多部分数据，常用于文件上传。
+         application/x-www-form-urlencoded：用于指示实体主体是经过 URL 编码的表单数据，常用于 HTTP POST 请求中发送表单数据。
+         image/jpeg、image/png、image/gif 等：用于指示实体主体是图片格式的数据。
+         application/pdf：用于指示实体主体是 PDF 格式的数据。
+         application/octet-stream：用于指示实体主体是二进制数据流，没有指定具体的内容类型。
+*/
 
 BOOST_AUTO_TEST_CASE(HTTPRESPONSE) {
   Router router;
-  router.Get("/home", []() -> HttpResponse {
+  router.Get("/home", [](HttpRequest) -> HttpResponse {
     HttpResponse resp("text_html", "index.html");
     return resp;
   });
-  router.Post("/login", []() -> HttpResponse {
+  router.Get("/login", [](HttpRequest) -> HttpResponse {
     HttpResponse resp("text_html", "login.html");
+    return resp;
+  });
+  router.Get("/login", [](HttpRequest) -> HttpResponse {
+    HttpResponse resp("text_html", "login.html");
+    return resp;
+  });
+  router.Post("/login", [](HttpRequest req) -> HttpResponse {
+    cout << req.getBody() << endl;
+    cout<<req.getHeaders()["Content-Type"]<<endl;
+    HttpResponse resp("application_json", R"({"message":"success"})");
+    
+    cout << "this post handle was played" << endl;
     return resp;
   });
 

@@ -4,9 +4,7 @@
 #include <asm-generic/socket.h>
 #include <cstring>
 #include <functional>
-#include <iostream>
 #include <netinet/in.h>
-#include <ostream>
 #include <sys/socket.h>
 #include <unistd.h>
 
@@ -95,88 +93,88 @@ std::string httpResponse = "HTTP/1.1 200 OK\r\n"
                            "</body>\n"
                            "</html>\n";
 
-int TcpSocket::httpHandle() {
-  spdlog::info("waiting connection");
-  sockaddr_in caddr;
-  this->cfd = accept(fd, (struct sockaddr *)&caddr, &addrlen);
-  if (cfd == -1) {
-    spdlog::error("accpet error ");
-    return -1;
-  }
-  spdlog::info("connect successfully !!!");
-  char ip[32];
-  spdlog::info("client address : {}:{}",
-               inet_ntop(AF_INET, &caddr.sin_addr.s_addr, ip, sizeof(ip)),
-               ntohs(caddr.sin_port));
-  // std::cout << "client ip: "
-  //           << inet_ntop(AF_INET, &caddr.sin_addr.s_addr, ip, sizeof(ip)) <<
-  //           ","
-  //           << "port: " << ntohs(caddr.sin_port) << std::endl;
-  spdlog::info("ready into loop ");
-  while (true) {
-    char buffer[1024];
-    spdlog::info("recv buffer ");
-    auto len = recv(cfd, buffer, sizeof(buffer), 0);
-    std::cout << buffer << std::endl;
+// int TcpSocket::httpHandle() {
+//   spdlog::info("waiting connection");
+//   sockaddr_in caddr;
+//   this->cfd = accept(fd, (struct sockaddr *)&caddr, &addrlen);
+//   if (cfd == -1) {
+//     spdlog::error("accpet error ");
+//     return -1;
+//   }
+//   spdlog::info("connect successfully !!!");
+//   char ip[32];
+//   spdlog::info("client address : {}:{}",
+//                inet_ntop(AF_INET, &caddr.sin_addr.s_addr, ip, sizeof(ip)),
+//                ntohs(caddr.sin_port));
+//   // std::cout << "client ip: "
+//   //           << inet_ntop(AF_INET, &caddr.sin_addr.s_addr, ip, sizeof(ip)) <<
+//   //           ","
+//   //           << "port: " << ntohs(caddr.sin_port) << std::endl;
+//   spdlog::info("ready into loop ");
+//   while (true) {
+//     char buffer[1024];
+//     spdlog::info("recv buffer ");
+//     auto len = recv(cfd, buffer, sizeof(buffer), 0);
+//     std::cout << buffer << std::endl;
     
-    spdlog::info("recv request ,len :{}", len);
-    if (len > 0) {
-      std::string req_str(buffer);
-      HttpRequest req(req_str);
-      auto msg= ::httpHandle(req);
-      spdlog::info("ready to send response");
-      std::cout<<msg<<std::endl;
-      send(cfd, msg.c_str(), msg.size(), 0);
-    } else if (len == 0) {
-      spdlog::info("client close ");
-      break;
-    } else {
-      spdlog::error("recv error ");
-      break;
-    }
-  }
-  close(fd);
-  close(cfd);
-  return 0;
-}
+//     spdlog::info("recv request ,len :{}", len);
+//     if (len > 0) {
+//       std::string req_str(buffer);
+//       HttpRequest req(req_str);
+//       auto msg= ::httpHandle(req);
+//       spdlog::info("ready to send response");
+//       std::cout<<msg<<std::endl;
+//       send(cfd, msg.c_str(), msg.size(), 0);
+//     } else if (len == 0) {
+//       spdlog::info("client close ");
+//       break;
+//     } else {
+//       spdlog::error("recv error ");
+//       break;
+//     }
+//   }
+//   close(fd);
+//   close(cfd);
+//   return 0;
+// }
 
-int TcpSocket::httpHandleTest() {
-  // spdlog::set_level(spdlog::level::err);
-  sockaddr_in caddr;
-  this->cfd = accept(fd, (struct sockaddr *)&caddr, &addrlen);
-  if (cfd == -1) {
-    spdlog::error("accpet error ");
-    return -1;
-  }
-  spdlog::info("connect successfully !!!");
-  char ip[32];
-  spdlog::info("client address : {}:{}",
-               inet_ntop(AF_INET, &caddr.sin_addr.s_addr, ip, sizeof(ip)),
-               ntohs(caddr.sin_port));
-  spdlog::info("ready into loop ");
-  while (true) {
-    char buffer[1024];
-    spdlog::info("recv buffer ");
-    auto len = recv(cfd, buffer, sizeof(buffer), 0);
-    std::string recv_buf(buffer); 
-    std::cout << recv_buf << std::endl;
+// int TcpSocket::httpHandleTest() {
+//   // spdlog::set_level(spdlog::level::err);
+//   sockaddr_in caddr;
+//   this->cfd = accept(fd, (struct sockaddr *)&caddr, &addrlen);
+//   if (cfd == -1) {
+//     spdlog::error("accpet error ");
+//     return -1;
+//   }
+//   spdlog::info("connect successfully !!!");
+//   char ip[32];
+//   spdlog::info("client address : {}:{}",
+//                inet_ntop(AF_INET, &caddr.sin_addr.s_addr, ip, sizeof(ip)),
+//                ntohs(caddr.sin_port));
+//   spdlog::info("ready into loop ");
+//   while (true) {
+//     char buffer[1024];
+//     spdlog::info("recv buffer ");
+//     auto len = recv(cfd, buffer, sizeof(buffer), 0);
+//     std::string recv_buf(buffer); 
+//     std::cout << recv_buf << std::endl;
     
-    spdlog::info("recv request ,len :{}", len);
-    if (len > 0) {
-      spdlog::info("ready to send response");
-      HttpRequest request(recv_buf);
-      std::cout<<request.getMsg()<<std::endl;
-      send(cfd, httpResponse.c_str(), httpResponse.size(), 0);
-    } else if (len == 0) {
-      spdlog::info("client close ");
-      break;
-    } else {
-      spdlog::error("recv error ");
-      break;
-    }
-  }
-  close(fd);
-  close(cfd);
-  return 0;
-}
+//     spdlog::info("recv request ,len :{}", len);
+//     if (len > 0) {
+//       spdlog::info("ready to send response");
+//       HttpRequest request(recv_buf);
+//       std::cout<<request.getMsg()<<std::endl;
+//       send(cfd, httpResponse.c_str(), httpResponse.size(), 0);
+//     } else if (len == 0) {
+//       spdlog::info("client close ");
+//       break;
+//     } else {
+//       spdlog::error("recv error ");
+//       break;
+//     }
+//   }
+//   close(fd);
+//   close(cfd);
+//   return 0;
+// }
 

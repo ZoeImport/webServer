@@ -16,6 +16,7 @@ private:
   static std::string url_prefix;
 
 public:
+  HttpRequest()=default;
   HttpRequest(const std::string &requestStr);
 
   inline std::string getMethod() const { return _method; }

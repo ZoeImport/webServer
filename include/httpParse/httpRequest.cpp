@@ -54,7 +54,7 @@ HttpRequest::HttpRequest(const std::string &requestStr) {
   
   // cout << "line:" <<endl <<line << endl;
   // cout << "header:" << endl<<header << endl;
-  std::cout<<"body: "<<std::endl<<_body<<std::endl;
+  // std::cout<<"body: "<<std::endl<<_body<<std::endl;
 }
 std::string HttpRequest::url_prefix = "../resource";
 

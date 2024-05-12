@@ -6,8 +6,6 @@
 #include <memory>
 #include <spdlog/spdlog.h>
 #include <sys/epoll.h>
-#include <utility>
-#include <vector>
 #define THREAD_POOL_ACTIVE  
 
 class Epoll : protected TcpSocket {

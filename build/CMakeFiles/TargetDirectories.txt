@@ -2,14 +2,6 @@
 /home/zoe/webServer/build/CMakeFiles/test.dir
 /home/zoe/webServer/build/CMakeFiles/edit_cache.dir
 /home/zoe/webServer/build/CMakeFiles/rebuild_cache.dir
-/home/zoe/webServer/build/include/threadPool/CMakeFiles/ThreadPool.dir
-/home/zoe/webServer/build/include/threadPool/CMakeFiles/test.dir
-/home/zoe/webServer/build/include/threadPool/CMakeFiles/edit_cache.dir
-/home/zoe/webServer/build/include/threadPool/CMakeFiles/rebuild_cache.dir
-/home/zoe/webServer/build/include/TcpSocket/CMakeFiles/TcpSocket.dir
-/home/zoe/webServer/build/include/TcpSocket/CMakeFiles/test.dir
-/home/zoe/webServer/build/include/TcpSocket/CMakeFiles/edit_cache.dir
-/home/zoe/webServer/build/include/TcpSocket/CMakeFiles/rebuild_cache.dir
 /home/zoe/webServer/build/include/tools/CMakeFiles/Tool.dir
 /home/zoe/webServer/build/include/tools/CMakeFiles/test.dir
 /home/zoe/webServer/build/include/tools/CMakeFiles/edit_cache.dir

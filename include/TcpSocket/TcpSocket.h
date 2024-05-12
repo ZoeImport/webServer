@@ -4,7 +4,6 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 
-#include "../httpParse/httpRequest.h"
 
 void ConnectCallback(char *buf, int connectfd,
                      const std::function<char *(char *)> &func);
@@ -15,8 +14,8 @@ public:
   TcpSocket(const TcpSocket &server) = delete;
   TcpSocket(TcpSocket &&server) = delete;
   int accept_connect(const std::function<char *(char *)> &func);
-  int httpHandle();
-  int httpHandleTest();
+  // int httpHandle();
+  // int httpHandleTest();
 
 protected:
   sockaddr_in addr;

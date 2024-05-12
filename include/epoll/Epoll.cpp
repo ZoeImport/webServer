@@ -5,13 +5,9 @@
 #include <cstdlib>
 #include <cstring>
 #include <functional>
-#include <iostream>
-#include <mutex>
 #include <sys/epoll.h>
 #include <sys/socket.h>
-#include <thread>
 #include <unistd.h>
-#include <utility>
 
 int Epoll::start(const std::function<char *(char *)> &func) {
   spdlog::info("start begin");

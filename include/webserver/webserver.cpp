@@ -55,7 +55,7 @@ Webserver::Webserver(int port, Router router) {
                 << "===========" << std::endl;
       std::cout << "buffer:" << std::endl << buffer << std::endl;
 
-      router.Route(request.getPath());
+      router.Route(request);
       close(_socket.cfd);
     } else if (len == 0) {
       std::cerr << "len == 0" << std::endl;

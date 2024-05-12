@@ -5,8 +5,6 @@
 #include <future>
 #include <mutex>
 #include <queue>
-#include <spdlog/pattern_formatter-inl.h>
-#include <spdlog/spdlog.h>
 #include <stdexcept>
 #include <thread>
 #include <vector>
@@ -46,7 +44,7 @@ public:
       // don't allow enqueueing after stopping the pool
       if (stop) {
 
-        spdlog::error("threadpool stoped");
+        // spdlog::error("threadpool stoped");
         throw std::runtime_error("threadpool stoped");
       }
       tasks.emplace([task]() { (*task)(); });

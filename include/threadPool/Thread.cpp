@@ -1,5 +1,4 @@
 #include "Thread.h"
-#include "spdlog/spdlog.h"
 #include <functional>
 #include <mutex>
 #include <queue>
@@ -23,7 +22,7 @@ ThreadPool::ThreadPool(int size) : maxSize(size), stop(false) {
     });
     // spdlog::info("thread create");
   }
-  spdlog::info("thread pool init");
+  // spdlog::info("thread pool init");
 }
 
 ThreadPool::~ThreadPool() {
@@ -35,7 +34,7 @@ ThreadPool::~ThreadPool() {
   for (auto &thread : threads) {
     thread.join();
   }
-  spdlog::info("thread pool destruct");
+  // spdlog::info("thread pool destruct");
 }
 
 

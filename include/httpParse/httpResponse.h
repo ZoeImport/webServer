@@ -14,11 +14,12 @@ private:
   std::string _response;
   int _status_code;
   std::string _prefix;
+  // std::string _content_type;
 
-  const std::unordered_map<std::string, std::string> _split_character{
-      {"Space", " "},
-      {"Return", "/r/n"},
-  };
+  // const std::unordered_map<std::string, std::string> _split_character{
+  //     {"Space", " "},
+  //     {"Return", "/r/n"},
+  // };
 
 public:
   HttpResponse(std::string content_type, std::string body, std::string version="HTTP/1.1");

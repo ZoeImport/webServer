@@ -140,32 +140,6 @@ output/fast:
 .PHONY : output/fast
 
 #=============================================================================
-# Target rules for targets named ThreadPool
-
-# Build rule for target.
-ThreadPool: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreadPool
-.PHONY : ThreadPool
-
-# fast build rule for target.
-ThreadPool/fast:
-	$(MAKE) $(MAKESILENT) -f include/threadPool/CMakeFiles/ThreadPool.dir/build.make include/threadPool/CMakeFiles/ThreadPool.dir/build
-.PHONY : ThreadPool/fast
-
-#=============================================================================
-# Target rules for targets named TcpSocket
-
-# Build rule for target.
-TcpSocket: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TcpSocket
-.PHONY : TcpSocket
-
-# fast build rule for target.
-TcpSocket/fast:
-	$(MAKE) $(MAKESILENT) -f include/TcpSocket/CMakeFiles/TcpSocket.dir/build.make include/TcpSocket/CMakeFiles/TcpSocket.dir/build
-.PHONY : TcpSocket/fast
-
-#=============================================================================
 # Target rules for targets named Tool
 
 # Build rule for target.
@@ -238,8 +212,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... Httpparse"
-	@echo "... TcpSocket"
-	@echo "... ThreadPool"
 	@echo "... Tool"
 	@echo "... output"
 	@echo "... webserver"
