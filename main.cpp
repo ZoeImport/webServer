@@ -2,6 +2,11 @@
 #include "include/httpParse/httpResponse.h"
 #include <algorithm>
 #include <iostream>
+#include <mariadb/conncpp/Connection.hpp>
+#include <mariadb/conncpp/Driver.hpp>
+#include <mariadb/conncpp/SQLString.hpp>
+#include <mariadb/conncpp/jdbccompat.hpp>
+#include <memory>
 #include <ostream>
 #include <regex>
 #include <sstream>
@@ -13,7 +18,9 @@
 #include <boost/test/unit_test.hpp>
 #include <boost/test/unit_test_suite.hpp>
 #include <cstring>
-#include <spdlog/common.h>
+#include <mariadb/conncpp.hpp>
+
+// #include <spdlog/common.h>
 
 using namespace std;
 
@@ -243,41 +250,49 @@ void HandleAbout(int clientSocket) {
 //   cout << "body:" <<endl<< body << endl;
 // }
 
-
 /**
          application/json：用于指示实体主体是 JSON 格式的数据。
          application/xml：用于指示实体主体是 XML 格式的数据。
          text/plain：用于指示实体主体是纯文本格式的数据。
          text/html：用于指示实体主体是 HTML 格式的数据。
          multipart/form-data：用于指示实体主体包含多部分数据，常用于文件上传。
-         application/x-www-form-urlencoded：用于指示实体主体是经过 URL 编码的表单数据，常用于 HTTP POST 请求中发送表单数据。
+         application/x-www-form-urlencoded：用于指示实体主体是经过 URL
+   编码的表单数据，常用于 HTTP POST 请求中发送表单数据。
          image/jpeg、image/png、image/gif 等：用于指示实体主体是图片格式的数据。
          application/pdf：用于指示实体主体是 PDF 格式的数据。
          application/octet-stream：用于指示实体主体是二进制数据流，没有指定具体的内容类型。
 */
 
-BOOST_AUTO_TEST_CASE(HTTPRESPONSE) {
-  Router router;
-  router.Get("/home", [](HttpRequest) -> HttpResponse {
-    HttpResponse resp("text_html", "index.html");
-    return resp;
-  });
-  router.Get("/login", [](HttpRequest) -> HttpResponse {
-    HttpResponse resp("text_html", "login.html");
-    return resp;
-  });
-  router.Get("/login", [](HttpRequest) -> HttpResponse {
-    HttpResponse resp("text_html", "login.html");
-    return resp;
-  });
-  router.Post("/login", [](HttpRequest req) -> HttpResponse {
-    cout << req.getBody() << endl;
-    cout<<req.getHeaders()["Content-Type"]<<endl;
-    HttpResponse resp("application_json", R"({"message":"success"})");
-    
-    cout << "this post handle was played" << endl;
-    return resp;
-  });
+// BOOST_AUTO_TEST_CASE(HTTPRESPONSE) {
+//   Router router;
+//   router.Get("/home", [](HttpRequest) -> HttpResponse {
+//     HttpResponse resp("text_html", "index.html");
+//     return resp;
+//   });
+//   router.Get("/login", [](HttpRequest) -> HttpResponse {
+//     HttpResponse resp("text_html", "login.html");
+//     return resp;
+//   });
+//   router.Get("/login", [](HttpRequest) -> HttpResponse {
+//     HttpResponse resp("text_html", "login.html");
+//     return resp;
+//   });
+//   router.Post("/login", [](HttpRequest req) -> HttpResponse {
+//     cout << req.getBody() << endl;
+//     cout<<req.getHeaders()["Content-Type"]<<endl;
+//     HttpResponse resp("application_json", R"({"message":"success"})");
 
-  Webserver server(8081, router);
+//     cout << "this post handle was played" << endl;
+//     return resp;
+//   });
+
+//   Webserver server(8081, router);
+// }
+
+BOOST_AUTO_TEST_CASE(mariadbSql) {
+  sql::Driver *driver = sql::mariadb::get_driver_instance();
+  sql::SQLString url{"jdbc:mariadb://localhost:3306/Cpp"};
+  sql::Properties properties{{"user", "zoe"}, {"password", "123456"}};
+  std::unique_ptr<sql::Connection> conn(driver->connect(url, properties));
+
 }

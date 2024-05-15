@@ -28,7 +28,15 @@ add_subdirectory(include/tools)
 add_subdirectory(include/httpParse)
 add_subdirectory(include/webserver)
 
+
+# boost module
 find_package(boost)
+target_link_libraries(output ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+# mariadbcpp module
+# include_directories(/usr/include/mariadb)
+# link_directories(/usr/lib/mariadb)
+target_link_libraries(output mariadbcpp)
 
 
 # target_link_libraries(output spdlog::spdlog)
@@ -38,7 +46,6 @@ find_package(boost)
 target_link_libraries(output Tool)
 target_link_libraries(output Httpparse)
 target_link_libraries(output webserver)
-target_link_libraries(output ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
 
 # target_compile_options(output PUBLIC -g)
 

@@ -163,8 +163,41 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/c++/14.1.1/bits/stl_tempbuf.h \
  /usr/include/c++/14.1.1/pstl/glue_algorithm_defs.h \
  /usr/include/c++/14.1.1/pstl/execution_defs.h \
- /usr/include/c++/14.1.1/iostream /usr/include/c++/14.1.1/regex \
- /usr/include/c++/14.1.1/bitset /usr/include/c++/14.1.1/locale \
+ /usr/include/c++/14.1.1/iostream \
+ /usr/include/mariadb/conncpp/Connection.hpp \
+ /usr/include/mariadb/conncpp/buildconf.hpp \
+ /usr/include/mariadb/conncpp/SQLString.hpp \
+ /usr/include/c++/14.1.1/memory \
+ /usr/include/c++/14.1.1/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/14.1.1/bits/align.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/stdint-least.h \
+ /usr/include/c++/14.1.1/bits/unique_ptr.h \
+ /usr/include/c++/14.1.1/bits/shared_ptr.h \
+ /usr/include/c++/14.1.1/bits/shared_ptr_base.h \
+ /usr/include/c++/14.1.1/bits/allocated_ptr.h \
+ /usr/include/c++/14.1.1/ext/concurrence.h \
+ /usr/include/c++/14.1.1/bits/shared_ptr_atomic.h \
+ /usr/include/c++/14.1.1/bits/atomic_base.h \
+ /usr/include/c++/14.1.1/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/14.1.1/backward/auto_ptr.h \
+ /usr/include/c++/14.1.1/pstl/glue_memory_defs.h \
+ /usr/include/mariadb/conncpp/Savepoint.hpp \
+ /usr/include/mariadb/conncpp/jdbccompat.hpp /usr/include/c++/14.1.1/map \
+ /usr/include/c++/14.1.1/bits/stl_tree.h \
+ /usr/include/c++/14.1.1/bits/stl_map.h \
+ /usr/include/c++/14.1.1/bits/stl_multimap.h \
+ /usr/include/mariadb/conncpp/CArray.hpp \
+ /usr/include/mariadb/conncpp/compat/Struct.hpp \
+ /usr/include/mariadb/conncpp/compat/Object.hpp \
+ /usr/include/mariadb/conncpp/compat/Executor.hpp \
+ /usr/include/mariadb/conncpp/Driver.hpp \
+ /usr/include/mariadb/conncpp/Connection.hpp \
+ /usr/include/mariadb/conncpp/SQLString.hpp \
+ /usr/include/mariadb/conncpp/jdbccompat.hpp \
+ /usr/include/c++/14.1.1/regex /usr/include/c++/14.1.1/bitset \
+ /usr/include/c++/14.1.1/locale \
  /usr/include/c++/14.1.1/bits/locale_facets_nonio.h \
  /usr/include/c++/14.1.1/ctime \
  /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/time_members.h \
@@ -175,14 +208,7 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/c++/14.1.1/deque /usr/include/c++/14.1.1/bits/stl_deque.h \
  /usr/include/c++/14.1.1/bits/deque.tcc \
  /usr/include/c++/14.1.1/bits/stl_stack.h \
- /usr/include/c++/14.1.1/bits/shared_ptr.h \
- /usr/include/c++/14.1.1/bits/shared_ptr_base.h \
- /usr/include/c++/14.1.1/bits/allocated_ptr.h \
- /usr/include/c++/14.1.1/bits/unique_ptr.h \
- /usr/include/c++/14.1.1/ext/concurrence.h \
  /usr/include/c++/14.1.1/bits/std_function.h \
- /usr/include/c++/14.1.1/bits/stl_tree.h \
- /usr/include/c++/14.1.1/bits/stl_map.h \
  /usr/include/c++/14.1.1/bits/regex_constants.h \
  /usr/include/c++/14.1.1/bits/regex_error.h \
  /usr/include/c++/14.1.1/bits/regex_automaton.h \
@@ -201,15 +227,15 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/c++/14.1.1/functional /usr/include/c++/14.1.1/array \
  /usr/include/c++/14.1.1/compare \
  /home/zoe/webServer/include/webserver/webserver.h \
- /usr/include/netinet/in.h /usr/include/bits/stdint-uintn.h \
- /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
- /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
- /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
- /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
- /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
- /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/bits/socket.h \
+ /usr/include/bits/socket_type.h /usr/include/bits/sockaddr.h \
+ /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
+ /usr/include/linux/posix_types.h /usr/include/linux/stddef.h \
+ /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h /usr/include/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
  /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
  /usr/include/boost/test/unit_test.hpp \
  /usr/include/boost/test/test_tools.hpp /usr/include/boost/config.hpp \
@@ -428,19 +454,9 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/boost/smart_ptr/detail/sp_counted_base_gcc_atomic.hpp \
  /usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp \
  /usr/include/boost/cstdint.hpp \
- /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/stdint-least.h \
  /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
  /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
  /usr/include/boost/core/checked_delete.hpp \
- /usr/include/c++/14.1.1/memory \
- /usr/include/c++/14.1.1/bits/stl_raw_storage_iter.h \
- /usr/include/c++/14.1.1/bits/align.h \
- /usr/include/c++/14.1.1/bits/shared_ptr_atomic.h \
- /usr/include/c++/14.1.1/bits/atomic_base.h \
- /usr/include/c++/14.1.1/bits/atomic_lockfree_defines.h \
- /usr/include/c++/14.1.1/backward/auto_ptr.h \
- /usr/include/c++/14.1.1/pstl/glue_memory_defs.h \
  /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
  /usr/include/boost/throw_exception.hpp \
  /usr/include/boost/exception/exception.hpp \
@@ -603,8 +619,7 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/boost/test/framework.hpp \
  /usr/include/boost/test/detail/throw_exception.hpp \
  /usr/include/boost/test/tree/auto_registration.hpp \
- /usr/include/boost/test/tree/test_unit.hpp /usr/include/c++/14.1.1/map \
- /usr/include/c++/14.1.1/bits/stl_multimap.h \
+ /usr/include/boost/test/tree/test_unit.hpp \
  /usr/include/boost/test/tree/test_case_template.hpp \
  /usr/include/boost/test/utils/algorithm.hpp \
  /usr/include/boost/mpl/for_each.hpp \
@@ -648,32 +663,26 @@ CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp \
  /usr/include/boost/utility/value_init.hpp \
  /usr/include/boost/core/swap.hpp \
  /usr/include/boost/test/tree/global_fixture.hpp \
- /usr/include/boost/config/auto_link.hpp /usr/include/spdlog/common.h \
- /usr/include/spdlog/details/null_mutex.h /usr/include/c++/14.1.1/atomic \
- /usr/include/spdlog/tweakme.h /usr/include/c++/14.1.1/chrono \
- /usr/include/c++/14.1.1/bits/chrono.h /usr/include/c++/14.1.1/ratio \
- /usr/include/c++/14.1.1/cstdint \
- /usr/include/c++/14.1.1/bits/parse_numbers.h \
- /usr/include/spdlog/fmt/fmt.h /usr/include/fmt/core.h \
- /usr/include/c++/14.1.1/iterator \
- /usr/include/c++/14.1.1/bits/stream_iterator.h /usr/include/fmt/format.h \
- /usr/include/c++/14.1.1/cmath /usr/include/math.h \
- /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h /usr/include/c++/14.1.1/bits/specfun.h \
- /usr/include/c++/14.1.1/tr1/gamma.tcc \
- /usr/include/c++/14.1.1/tr1/special_function_util.h \
- /usr/include/c++/14.1.1/tr1/bessel_function.tcc \
- /usr/include/c++/14.1.1/tr1/beta_function.tcc \
- /usr/include/c++/14.1.1/tr1/ell_integral.tcc \
- /usr/include/c++/14.1.1/tr1/exp_integral.tcc \
- /usr/include/c++/14.1.1/tr1/hypergeometric.tcc \
- /usr/include/c++/14.1.1/tr1/legendre_function.tcc \
- /usr/include/c++/14.1.1/tr1/modified_bessel_func.tcc \
- /usr/include/c++/14.1.1/tr1/poly_hermite.tcc \
- /usr/include/c++/14.1.1/tr1/poly_laguerre.tcc \
- /usr/include/c++/14.1.1/tr1/riemann_zeta.tcc /usr/include/fmt/core.h \
- /usr/include/spdlog/common-inl.h
+ /usr/include/boost/config/auto_link.hpp /usr/include/mariadb/conncpp.hpp \
+ /usr/include/mariadb/conncpp/Driver.hpp \
+ /usr/include/mariadb/conncpp/DriverManager.hpp \
+ /usr/include/mariadb/conncpp/Driver.hpp \
+ /usr/include/mariadb/conncpp/Connection.hpp \
+ /usr/include/mariadb/conncpp/ResultSet.hpp \
+ /usr/include/mariadb/conncpp/Warning.hpp \
+ /usr/include/mariadb/conncpp/DatabaseMetaData.hpp \
+ /usr/include/mariadb/conncpp/ResultSetMetaData.hpp \
+ /usr/include/mariadb/conncpp/Statement.hpp \
+ /usr/include/mariadb/conncpp/ResultSet.hpp \
+ /usr/include/mariadb/conncpp/PreparedStatement.hpp \
+ /usr/include/mariadb/conncpp/ParameterMetaData.hpp \
+ /usr/include/mariadb/conncpp/Statement.hpp \
+ /usr/include/mariadb/conncpp/ParameterMetaData.hpp \
+ /usr/include/mariadb/conncpp/CallableStatement.hpp \
+ /usr/include/mariadb/conncpp/PreparedStatement.hpp \
+ /usr/include/mariadb/conncpp/Warning.hpp \
+ /usr/include/mariadb/conncpp/Savepoint.hpp \
+ /usr/include/mariadb/conncpp/Types.hpp \
+ /usr/include/mariadb/conncpp/SQLString.hpp \
+ /usr/include/mariadb/conncpp/Exception.hpp \
+ /usr/include/mariadb/conncpp/jdbccompat.hpp

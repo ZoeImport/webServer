@@ -279,6 +279,12 @@ boost_unit_test_framework_DIR:PATH=/usr/lib/cmake/boost_unit_test_framework-1.83
 //The directory containing a CMake configuration file for fmt.
 fmt_DIR:PATH=/usr/lib/cmake/fmt
 
+//The directory containing a CMake configuration file for mariadb.
+mariadb_DIR:PATH=mariadb_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for mariadbcpp.
+mariadbcpp_DIR:PATH=mariadbcpp_DIR-NOTFOUND
+
 //Value Computed by CMake
 output_BINARY_DIR:STATIC=/home/zoe/webServer/build
 
