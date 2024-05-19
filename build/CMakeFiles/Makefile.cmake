@@ -11,6 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.29.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.29.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.29.3/CMakeSystem.cmake"
+  "/home/zoe/webServer/include/database/CMakeLists.txt"
   "/home/zoe/webServer/include/httpParse/CMakeLists.txt"
   "/home/zoe/webServer/include/tools/CMakeLists.txt"
   "/home/zoe/webServer/include/webserver/CMakeLists.txt"
@@ -73,6 +74,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "include/tools/CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/httpParse/CMakeFiles/CMakeDirectoryInformation.cmake"
   "include/webserver/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include/database/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -81,4 +83,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "include/tools/CMakeFiles/Tool.dir/DependInfo.cmake"
   "include/httpParse/CMakeFiles/Httpparse.dir/DependInfo.cmake"
   "include/webserver/CMakeFiles/webserver.dir/DependInfo.cmake"
+  "include/database/CMakeFiles/database.dir/DependInfo.cmake"
   )

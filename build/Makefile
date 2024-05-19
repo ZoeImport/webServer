@@ -178,6 +178,19 @@ webserver/fast:
 	$(MAKE) $(MAKESILENT) -f include/webserver/CMakeFiles/webserver.dir/build.make include/webserver/CMakeFiles/webserver.dir/build
 .PHONY : webserver/fast
 
+#=============================================================================
+# Target rules for targets named database
+
+# Build rule for target.
+database: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 database
+.PHONY : database
+
+# fast build rule for target.
+database/fast:
+	$(MAKE) $(MAKESILENT) -f include/database/CMakeFiles/database.dir/build.make include/database/CMakeFiles/database.dir/build
+.PHONY : database/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -213,6 +226,7 @@ help:
 	@echo "... test"
 	@echo "... Httpparse"
 	@echo "... Tool"
+	@echo "... database"
 	@echo "... output"
 	@echo "... webserver"
 	@echo "... main.o"

@@ -27,7 +27,7 @@ add_executable(output main.cpp)
 add_subdirectory(include/tools)
 add_subdirectory(include/httpParse)
 add_subdirectory(include/webserver)
-
+add_subdirectory(include/database)
 
 # boost module
 find_package(boost)
@@ -46,6 +46,8 @@ target_link_libraries(output mariadbcpp)
 target_link_libraries(output Tool)
 target_link_libraries(output Httpparse)
 target_link_libraries(output webserver)
+target_link_libraries(output database)
+
 
 # target_compile_options(output PUBLIC -g)
 

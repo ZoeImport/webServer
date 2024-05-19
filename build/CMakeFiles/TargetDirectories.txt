@@ -14,3 +14,7 @@
 /home/zoe/webServer/build/include/webserver/CMakeFiles/test.dir
 /home/zoe/webServer/build/include/webserver/CMakeFiles/edit_cache.dir
 /home/zoe/webServer/build/include/webserver/CMakeFiles/rebuild_cache.dir
+/home/zoe/webServer/build/include/database/CMakeFiles/database.dir
+/home/zoe/webServer/build/include/database/CMakeFiles/test.dir
+/home/zoe/webServer/build/include/database/CMakeFiles/edit_cache.dir
+/home/zoe/webServer/build/include/database/CMakeFiles/rebuild_cache.dir

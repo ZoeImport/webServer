@@ -94,6 +94,7 @@ output: CMakeFiles/output.dir/main.cpp.o
 output: CMakeFiles/output.dir/build.make
 output: /usr/lib/libboost_unit_test_framework.so.1.83.0
 output: /home/zoe/webServer/lib/libwebserver.so
+output: /home/zoe/webServer/lib/libdatabase.so
 output: /home/zoe/webServer/lib/libHttpparse.so
 output: /home/zoe/webServer/lib/libTool.so
 output: CMakeFiles/output.dir/link.txt

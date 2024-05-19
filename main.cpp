@@ -1,28 +1,26 @@
-#include "include/httpParse/httpRequest.h"
-#include "include/httpParse/httpResponse.h"
-#include <algorithm>
-#include <iostream>
+#include "include/database/connector.h"
 #include <mariadb/conncpp/Connection.hpp>
 #include <mariadb/conncpp/Driver.hpp>
 #include <mariadb/conncpp/SQLString.hpp>
 #include <mariadb/conncpp/jdbccompat.hpp>
-#include <memory>
-#include <ostream>
-#include <regex>
-#include <sstream>
-#include <string>
-#include <unordered_map>
 #define BOOST_TEST_MODULE MyTest
-#include "include/webserver/router.h"
 #include "include/webserver/webserver.h"
 #include <boost/test/unit_test.hpp>
 #include <boost/test/unit_test_suite.hpp>
 #include <cstring>
 #include <mariadb/conncpp.hpp>
 
-// #include <spdlog/common.h>
+using namespace db;
 
 using namespace std;
+
+BOOST_AUTO_TEST_CASE(db_test){
+  Connector conn("jdbc:mariadb://localhost:3306/Cpp", "zoe", "123456");
+  cout<<(conn.getConnectPtr());
+  
+}
+
+
 
 // THREAD_POOL_ACTIVE
 
@@ -121,27 +119,27 @@ using namespace std;
 // BOOST_AUTO_TEST_CASE(netFrameTest) {
 //   netFrame::Net net(8081);
 // }
-void HandleHome(int clientSocket) {
-  std::string response =
-      "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHome Page";
-  send(clientSocket, response.c_str(), response.size(), 0);
-}
+// void HandleHome(int clientSocket) {
+//   std::string response =
+//       "HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHome Page";
+//   send(clientSocket, response.c_str(), response.size(), 0);
+// }
 
-void HandleAbout(int clientSocket) {
-  std::string response = "HTTP/1.1 200 OK\r\n"
-                         "Content-Type: text/html; charset=UTF-8\r\n"
-                         "\r\n"
-                         "<!DOCTYPE html>\n"
-                         "<html>\n"
-                         "<head>\n"
-                         "<title>HTML Response</title>\n"
-                         "</head>\n"
-                         "<body>\n"
-                         "<h1>Hello, this is a simple HTML response!</h1>\n"
-                         "</body>\n"
-                         "</html>\n";
-  send(clientSocket, response.c_str(), response.size(), 0);
-}
+// void HandleAbout(int clientSocket) {
+//   std::string response = "HTTP/1.1 200 OK\r\n"
+//                          "Content-Type: text/html; charset=UTF-8\r\n"
+//                          "\r\n"
+//                          "<!DOCTYPE html>\n"
+//                          "<html>\n"
+//                          "<head>\n"
+//                          "<title>HTML Response</title>\n"
+//                          "</head>\n"
+//                          "<body>\n"
+//                          "<h1>Hello, this is a simple HTML response!</h1>\n"
+//                          "</body>\n"
+//                          "</html>\n";
+//   send(clientSocket, response.c_str(), response.size(), 0);
+// }
 
 // BOOST_AUTO_TEST_CASE(netFrameTest) {
 //   Router router;
@@ -289,10 +287,11 @@ void HandleAbout(int clientSocket) {
 //   Webserver server(8081, router);
 // }
 
-BOOST_AUTO_TEST_CASE(mariadbSql) {
-  sql::Driver *driver = sql::mariadb::get_driver_instance();
-  sql::SQLString url{"jdbc:mariadb://localhost:3306/Cpp"};
-  sql::Properties properties{{"user", "zoe"}, {"password", "123456"}};
-  std::unique_ptr<sql::Connection> conn(driver->connect(url, properties));
+// BOOST_AUTO_TEST_CASE(mariadbSql) {
+//   sql::Driver *driver = sql::mariadb::get_driver_instance();
+//   sql::SQLString url{"jdbc:mariadb://localhost:3306/Cpp"};
+//   sql::Properties properties{{"user", "zoe"}, {"password", "123456"}};
+//   std::unique_ptr<sql::Connection> conn(driver->connect(url, properties));
 
-}
+// }
+

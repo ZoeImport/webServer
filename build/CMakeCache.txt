@@ -20,6 +20,12 @@ Boost_DIR:PATH=/usr/lib/cmake/Boost-1.83.0
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/include
 
+//Boost library directory RELEASE
+Boost_LIBRARY_DIR_RELEASE:PATH=/usr/lib
+
+//Boost unit_test_framework library (debug)
+Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG:FILEPATH=Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG-NOTFOUND
+
 Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE:STRING=/usr/lib/libboost_unit_test_framework.so.1.83.0
 
 //Path to a program.
@@ -276,6 +282,15 @@ boost_headers_DIR:PATH=/usr/lib/cmake/boost_headers-1.83.0
 //The directory containing a CMake configuration file for boost_unit_test_framework.
 boost_unit_test_framework_DIR:PATH=/usr/lib/cmake/boost_unit_test_framework-1.83.0
 
+//Value Computed by CMake
+database_BINARY_DIR:STATIC=/home/zoe/webServer/build/include/database
+
+//Value Computed by CMake
+database_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+database_SOURCE_DIR:STATIC=/home/zoe/webServer/include/database
+
 //The directory containing a CMake configuration file for fmt.
 fmt_DIR:PATH=/usr/lib/cmake/fmt
 
@@ -313,6 +328,10 @@ webserver_SOURCE_DIR:STATIC=/home/zoe/webServer/include/webserver
 
 //ADVANCED property for variable: Boost_DIR
 Boost_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG
+Boost_UNIT_TEST_FRAMEWORK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE
+Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -417,7 +436,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
