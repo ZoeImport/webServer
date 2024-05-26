@@ -17,8 +17,10 @@ std::string readFileToString(std::string path) {
   return result;
 }
 
-std::string eraseBlur(const std::string &content_type,const std::string &body){
+std::string eraseBlur(const std::string &content_type,const std::string &body=" "){
   if (content_type=="application/json") {
     
   }
 }
+
+

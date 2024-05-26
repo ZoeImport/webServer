@@ -1,26 +1,192 @@
-#include "include/database/connector.h"
-#include <mariadb/conncpp/Connection.hpp>
-#include <mariadb/conncpp/Driver.hpp>
-#include <mariadb/conncpp/SQLString.hpp>
-#include <mariadb/conncpp/jdbccompat.hpp>
+#include <exception>
+#include <map>
+#include <ostream>
 #define BOOST_TEST_MODULE MyTest
+#include "include/database/connector.h"
+#include "include/tools/tool.h"
 #include "include/webserver/webserver.h"
+#include <any>
 #include <boost/test/unit_test.hpp>
 #include <boost/test/unit_test_suite.hpp>
 #include <cstring>
 #include <mariadb/conncpp.hpp>
+#include <mariadb/conncpp/Connection.hpp>
+#include <mariadb/conncpp/Driver.hpp>
+#include <mariadb/conncpp/ResultSet.hpp>
+#include <mariadb/conncpp/ResultSetMetaData.hpp>
+#include <mariadb/conncpp/SQLString.hpp>
+#include <mariadb/conncpp/Statement.hpp>
+#include <mariadb/conncpp/jdbccompat.hpp>
+#include <memory>
+#include <string>
+#include <type_traits>
+#include <variant>
+#include <vector>
 
 using namespace db;
-
 using namespace std;
+using namespace tool;
 
-BOOST_AUTO_TEST_CASE(db_test){
-  Connector conn("jdbc:mariadb://localhost:3306/Cpp", "zoe", "123456");
-  cout<<(conn.getConnectPtr());
+// template <typename... Args> string addString(char sepeerator, Args... args) {
+//   // if ((std::is_same_v<string, Args> && ...)) {
+//   string res;
+//   vector<string> arr{args...};
+//   for (auto &x : arr) {
+//     res += (x + sepeerator);
+//   }
+//   if (res.back() == sepeerator) {
+//     res.pop_back();
+//     return res;
+//   } else {
+//     throw exception{};
+//   }
+//   // }
+// }
+
+BOOST_AUTO_TEST_CASE(insertTEST) {
+  sql::SQLString url{"jdbc:mariadb://localhost:3306/Cpp"};
+
+  Connector conn(url, "zoe", "123456");
+
+  Statement state(conn);
+
+  state.insert("user",{{"id","005"},{"account","tom"},{"password","666"},{"create_date","01-01-11"}});
+
   
 }
 
+BOOST_AUTO_TEST_CASE(selectTEST) {
 
+  sql::SQLString url{"jdbc:mariadb://localhost:3306/Cpp"};
+
+  Connector conn(url, "zoe", "123456");
+
+  Statement state(conn);
+
+  std::unique_ptr<sql::ResultSet> res{
+      state.select("user", "id", "account", "password", "create_date")};
+
+  while (res->next()) {
+    std::cout << res->getString("id") + "\t" << res->getString("account") + "\t"
+              << res->getString("password") + "\t"
+              << res->getString("create_date") << std::endl;
+  }
+}
+
+// template<typename  ...Args>
+// auto captureArgs(Args ... args){
+//   return (args + ...);
+
+// // }
+// //
+// // template <typename ... Ts>
+// // auto sum(Ts ... ts)
+// // {
+// //     return (ts + ...);
+// // }
+
+// template <typename ... Ts>
+// std::string sum(Ts ... ts)
+// {
+//     std::stringstream ss;
+//     (ss << ... << ts);
+//     return ss.str();
+// }
+
+// // template <typename ... Ts>
+// // auto stringAdd(Ts ... ts)
+// // {
+// //     vectorTs> vec;
+// //     return (ts + ... );
+// // }
+// #include <iostream>
+// #include <string>
+
+// // 递归终止条件
+// std::string concatenate() {
+//     return "";
+// }
+
+// // 递归调用，将第一个参数转换为字符串，然后与其他参数连接
+// template<typename T, typename... Args>
+// std::string concatenate(const T& first, const Args&... args) {
+//     return first + concatenate(args...);
+// }
+
+// // 递归调用，处理字符串类型的参数
+// std::string concatenate(const std::string& first) {
+//     return first;
+// }
+
+// // // 主函数
+// // template<typename... Args>
+// // std::string joinStrings(const Args&... args) {
+// //     return concatenate(args...);
+// // }
+
+// template<typename T>
+// string to_string(const T&t){
+//   if constexpr (std::is_convertible_v<T,string>){
+//     return t;
+//   }else {
+//     return std::to_string(t);
+//   }
+// }
+
+// template<typename ...Args>
+// auto joinStrings(const Args ...args){
+//   string result;
+//   (result+=...+=to_string(args));
+//   return result;
+// }
+
+// template<typename... Args>
+// std::vector<std::any> storeArgsInVector(const Args&... args) {
+//     return {std::any(args)...}; // 使用参数包展开来初始化容器
+// }
+// // std::string concate(std::string ...args) {
+// //     std::string result;
+// //     (result += ... += args);
+// //     return result;
+// // }
+// template<typename  T>
+// auto vi=[](const T&t){
+//   cout<<t<<",";
+// };
+// BOOST_AUTO_TEST_CASE(args){
+// }
+
+// BOOST_AUTO_TEST_CASE(db_test) {
+
+//   // sql::Driver *driver = sql::mariadb::get_driver_instance();
+
+//   // sql::Properties properties{{"user", "zoe"}, {"password", "123456"}};
+//   // unique_ptr<sql::Connection> conn{driver->connect(url, properties)};
+//   sql::SQLString url{"jdbc:mariadb://localhost:3306/Cpp"};
+
+//   Connector conn(url, "zoe", "password");
+
+//   shared_ptr<sql::Statement> stmnt{conn.getConnectPtr()->createStatement()};
+
+//   Statement state(conn);
+//   // state.selectAll("user","name","type","len");
+
+//   // unique_ptr<sql::ResultSet> res{stmnt->executeQuery("describe user")};
+
+//   // while (res->next()) {
+//   //   cout<<""<<res->getString("Field")<<":"<<res->getString("Type")<<endl;
+//   // }
+
+//   // sql::ResultSetMetaData *metaData = res->getMetaData();
+//   // auto count = metaData->getColumnCount();
+//   // cout << count;
+
+//   // for (auto index = 0; index < count; ++index) {
+//   //   cout << metaData->getColumnType(index) << endl;
+//   // }
+
+//   // metaData->getColumnCount()
+// }
 
 // THREAD_POOL_ACTIVE
 
@@ -294,4 +460,3 @@ BOOST_AUTO_TEST_CASE(db_test){
 //   std::unique_ptr<sql::Connection> conn(driver->connect(url, properties));
 
 // }
-
