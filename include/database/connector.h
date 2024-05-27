@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../tools/tool.h"
-#include <iostream>
+#include <algorithm>
 #include <mariadb/conncpp.hpp>
 #include <mariadb/conncpp/Connection.hpp>
 #include <mariadb/conncpp/Driver.hpp>
@@ -11,9 +11,9 @@
 #include <mariadb/conncpp/Statement.hpp>
 #include <mariadb/conncpp/jdbccompat.hpp>
 #include <memory>
-#include <ostream>
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 namespace db {
 
@@ -30,6 +30,27 @@ public:
   sql::Connection *getConnectPtr();
 };
 
+class Result {
+private:
+  std::vector<std::unordered_map<std::string, std::string>> _list_result_map;
+
+public:
+  template <typename... Args> Result(sql::ResultSet *result, Args... args) {
+    auto vec = tool::strs_to_lists(args...);
+    std::reverse(vec.begin(),vec.end());
+    while (result->next()) {
+      std::unordered_map<std::string, std::string> row;
+      for (auto &param : vec) {
+        row[param] = result->getString(param);
+      }
+      _list_result_map.push_back(row);
+    }
+  }
+
+  inline auto &get_list_result_map() const { return _list_result_map; }
+
+};
+
 class Statement {
 private:
   std::unique_ptr<sql::Connection> _conn;
@@ -40,13 +61,15 @@ private:
 public:
   Statement(Connector &connector);
   template <typename... Args>
-  sql::ResultSet* select(const sql::SQLString &&tableName,
-                            const Args &...args) {
-    auto coloums = tool::addString(',', args...);
+  auto select(const sql::SQLString &&tableName, const Args &...args) {
+    auto coloums = tool::add_string(',', args...);
     sql::SQLString selectSql{"select " + coloums + " from " + tableName};
-    return _stmnt->executeQuery(selectSql);
+    Result res(_stmnt->executeQuery(selectSql), args...);
+    return res;
   }
 
-  int insert(const std::string &tableName,const std::map<std::string,std::string> &coloumToValueMap);
+  int insert(const std::string &tableName,
+             const std::map<std::string, std::string> &coloumToValueMap);
 };
+
 } // namespace db

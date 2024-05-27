@@ -1,11 +1,11 @@
 #include "connector.h"
 #include <iostream>
-#include <iterator>
 #include <map>
 #include <mariadb/conncpp/Connection.hpp>
 #include <mariadb/conncpp/Driver.hpp>
 #include <mariadb/conncpp/Exception.hpp>
 #include <mariadb/conncpp/PreparedStatement.hpp>
+#include <mariadb/conncpp/ResultSet.hpp>
 #include <mariadb/conncpp/SQLString.hpp>
 #include <mariadb/conncpp/Statement.hpp>
 #include <memory>
@@ -56,16 +56,18 @@ int Statement::insert(const std::string &tableName,const std::map<std::string,st
     ++index;
   }
   insertSql+=colounms+values;
-  std::cout<<insertSql<<std::endl;
   
   std::shared_ptr<sql::PreparedStatement>temp{_conn->prepareStatement(insertSql)};
   _prepare_stmnt.swap(temp);
   index=1;
+
   for (auto &kv : coloumToValueMap) {
     _prepare_stmnt->setString(index,kv.second);
     ++index;
   }
+
   return _prepare_stmnt->executeUpdate();
 }
+
 
 } // namespace db

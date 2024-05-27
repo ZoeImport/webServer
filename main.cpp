@@ -1,11 +1,7 @@
-#include <exception>
-#include <map>
 #include <ostream>
 #define BOOST_TEST_MODULE MyTest
 #include "include/database/connector.h"
-#include "include/tools/tool.h"
 #include "include/webserver/webserver.h"
-#include <any>
 #include <boost/test/unit_test.hpp>
 #include <boost/test/unit_test_suite.hpp>
 #include <cstring>
@@ -17,15 +13,20 @@
 #include <mariadb/conncpp/SQLString.hpp>
 #include <mariadb/conncpp/Statement.hpp>
 #include <mariadb/conncpp/jdbccompat.hpp>
-#include <memory>
-#include <string>
-#include <type_traits>
-#include <variant>
-#include <vector>
 
 using namespace db;
 using namespace std;
 using namespace tool;
+
+// BOOST_AUTO_TEST_CASE(tool_1){
+//   for (auto &s :strs_to_lists("hello","nihao","back")) {
+//     cout<<s<<" ";
+//   }
+//   cout<<endl;
+  
+
+// }
+
 
 // template <typename... Args> string addString(char sepeerator, Args... args) {
 //   // if ((std::is_same_v<string, Args> && ...)) {
@@ -43,17 +44,18 @@ using namespace tool;
 //   // }
 // }
 
-BOOST_AUTO_TEST_CASE(insertTEST) {
-  sql::SQLString url{"jdbc:mariadb://localhost:3306/Cpp"};
+// BOOST_AUTO_TEST_CASE(insertTEST) {
+//   sql::SQLString url{"jdbc:mariadb://localhost:3306/Cpp"};
 
-  Connector conn(url, "zoe", "123456");
+//   Connector conn(url, "zoe", "123456");
 
-  Statement state(conn);
+//   Statement state(conn);
 
-  state.insert("user",{{"id","005"},{"account","tom"},{"password","666"},{"create_date","01-01-11"}});
-
+//   cout<<state.insert("user",{{"id","008"},{"account","JJ"},{"password","666"},{"create_date","01-01-11"}});
+//   cout<<state.insert("user",{{"id","007"},{"account","JJ"},{"password","666"},{"create_date","01-01-11"}});
+//   cout<<endl;
   
-}
+// }
 
 BOOST_AUTO_TEST_CASE(selectTEST) {
 
@@ -63,13 +65,14 @@ BOOST_AUTO_TEST_CASE(selectTEST) {
 
   Statement state(conn);
 
-  std::unique_ptr<sql::ResultSet> res{
-      state.select("user", "id", "account", "password", "create_date")};
-
-  while (res->next()) {
-    std::cout << res->getString("id") + "\t" << res->getString("account") + "\t"
-              << res->getString("password") + "\t"
-              << res->getString("create_date") << std::endl;
+  auto res{
+      state.select("user", "id", "account", "create_date")};
+  auto idnex=0;
+  for (auto& mem :res.get_list_result_map()) {
+    for (auto &x :mem) {
+      cout<<x.second<<"\t";
+    }
+    cout<<endl;
   }
 }
 

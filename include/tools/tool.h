@@ -5,6 +5,7 @@
 #include <string>
 #include <type_traits>
 #include <utility>
+#include <vector>
 
 // func wrap
 template <typename F, typename... Args> auto wrapFunc(F &&f, Args &&...args) {
@@ -27,7 +28,7 @@ template <typename T> std::string to_string(const T &t) {
   }
 }
 template <typename... Args>
-std::string addString(char sepeerator, Args... args) {
+std::string add_string(char sepeerator, Args... args) {
   // if ((std::is_same_v<string, Args> && ...)) {
   std::string res;
   std::vector<std::string> arr{args...};
@@ -41,6 +42,11 @@ std::string addString(char sepeerator, Args... args) {
     throw std::exception{};
   }
   // }
+}
+
+template <typename... Args>
+inline auto strs_to_lists(Args... args) ->std::vector<std::string>{
+    return std::vector<std::string>{args...};
 }
 } // namespace tool
 
