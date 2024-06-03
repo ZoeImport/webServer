@@ -5,7 +5,7 @@ enable_testing()
 add_test(NAME EXE_test COMMAND output)
 
 
-set(CXX_STANDARD 17)
+set(CXX_STANDARD 20)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build)
@@ -20,7 +20,7 @@ find_package(spdlog REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
  
 
-add_executable(output main.cpp)
+add_executable(output TEST.cpp)
 # add_subdirectory(include/threadPool)
 # add_subdirectory(include/TcpSocket)
 # add_subdirectory(include/epoll)

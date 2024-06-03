@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include "tool.h"
 
 std::string readFileToString(std::string path) {
   std::fstream read(path);
@@ -16,11 +17,10 @@ std::string readFileToString(std::string path) {
   }
   return result;
 }
-
-std::string eraseBlur(const std::string &content_type,const std::string &body=" "){
-  if (content_type=="application/json") {
+// std::string eraseBlur(const std::string &content_type,const std::string &body=" "){
+//   if (content_type=="application/json") {
     
-  }
-}
+//   }
+// }
 
 

@@ -38,36 +38,88 @@ Statement::Statement(Connector &connector) {
   _prepare_stmnt = std::shared_ptr<sql::PreparedStatement>();
 }
 
-int Statement::insert(const std::string &tableName,const std::map<std::string,std::string> &coloumToValueMap){
+int Statement::Insert(
+    const std::string &tableName,
+    const std::map<std::string, std::string> &coloumToValueMap) {
   std::string insertSql{"insert into "};
-  insertSql+=tableName;
+  insertSql += tableName;
   std::string colounms{"("};
   std::string values{" values("};
-  auto len=coloumToValueMap.size();
-  auto index=0;
-  for (auto &kv:coloumToValueMap) {
-    if (index==len-1) {
-      colounms+=(kv.first+") ");
-      values+=("?)");
+  auto len = coloumToValueMap.size();
+  auto index = 0;
+  for (auto &kv : coloumToValueMap) {
+    if (index == len - 1) {
+      colounms += (kv.first + ") ");
+      values += ("?)");
       break;
     }
-    colounms+=(kv.first+",");
-    values+=("?,");
+    colounms += (kv.first + ",");
+    values += ("?,");
     ++index;
   }
-  insertSql+=colounms+values;
-  
-  std::shared_ptr<sql::PreparedStatement>temp{_conn->prepareStatement(insertSql)};
-  _prepare_stmnt.swap(temp);
-  index=1;
+  insertSql += colounms + values;
 
+  std::shared_ptr<sql::PreparedStatement> temp{
+      _conn->prepareStatement(insertSql)};
+  _prepare_stmnt.swap(temp);
+
+  index = 1;
   for (auto &kv : coloumToValueMap) {
-    _prepare_stmnt->setString(index,kv.second);
-    ++index;
+    _prepare_stmnt->setString(index++, kv.second);
   }
 
   return _prepare_stmnt->executeUpdate();
 }
 
+int Statement::Update(
+    const std::string &tableName,
+    const std::map<std::string, std::string> &coloumToValueMap,
+    std::string condition) {
+  std::string updateSql{"update " + tableName + " set "};
+
+  for (auto it = coloumToValueMap.begin(); it != coloumToValueMap.end(); ++it) {
+    if (it != coloumToValueMap.begin()) {
+      updateSql += ",";
+    }
+    updateSql += (it->first + " = ? ");
+  }
+  updateSql += ("where " + condition);
+
+  std::shared_ptr<sql::PreparedStatement> temp{
+      _conn->prepareStatement(updateSql)};
+  _prepare_stmnt.swap(temp);
+  auto index = 1;
+  for (auto &kv : coloumToValueMap) {
+    _prepare_stmnt->setString(index++, kv.second);
+  }
+
+  return _prepare_stmnt->executeUpdate();
+}
+
+int Statement::Delete(const std::string &tableName,
+                      const std::string &condition) {
+
+  std::string deleteSql = ("delete from " + tableName + " where " + condition);
+
+  return _stmnt->executeUpdate(deleteSql);
+}
+
+int Statement::Delete(const std::string &tableName,
+                      const std::map<std::string, std::string> &conditionMap,
+                      const std::string &separate) {
+
+  std::string deleteSql = ("delete from " + tableName + " where ");
+  int index = 1;
+  int len = conditionMap.size();
+  for (auto &kv : conditionMap) {
+    deleteSql += (kv.first + "=" + kv.second);
+    if (index != len) {
+      ++index;
+      deleteSql += (" " + separate + " ");
+    }
+  }
+  return _stmnt->executeUpdate(deleteSql);
+}
+  
 
 } // namespace db

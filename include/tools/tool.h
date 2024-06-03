@@ -7,16 +7,18 @@
 #include <utility>
 #include <vector>
 
-// func wrap
-template <typename F, typename... Args> auto wrapFunc(F &&f, Args &&...args) {
-  return std::bind(std::forward<F>(f), std::forward<Args>(args)...);
-}
-
 // read file(at path) to string
 std::string readFileToString(std::string path);
 
 // remove blur messgae from  content-type of Requestbody to make it correct
 std::string eraseBlur(const std::string &content_type, const std::string &body);
+
+
+
+// func wrap
+template <typename F, typename... Args> auto wrapFunc(F &&f, Args &&...args) {
+  return std::bind(std::forward<F>(f), std::forward<Args>(args)...);
+}
 
 namespace tool {
 
@@ -45,8 +47,8 @@ std::string add_string(char sepeerator, Args... args) {
 }
 
 template <typename... Args>
-inline auto strs_to_lists(Args... args) ->std::vector<std::string>{
-    return std::vector<std::string>{args...};
+inline auto strs_to_lists(Args... args) -> std::vector<std::string> {
+  return std::vector<std::string>{args...};
 }
 } // namespace tool
 

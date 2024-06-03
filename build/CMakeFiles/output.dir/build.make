@@ -69,28 +69,28 @@ include CMakeFiles/output.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/output.dir/flags.make
 
-CMakeFiles/output.dir/main.cpp.o: CMakeFiles/output.dir/flags.make
-CMakeFiles/output.dir/main.cpp.o: /home/zoe/webServer/main.cpp
-CMakeFiles/output.dir/main.cpp.o: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/output.dir/main.cpp.o"
-	/usr/sbin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/main.cpp.o -MF CMakeFiles/output.dir/main.cpp.o.d -o CMakeFiles/output.dir/main.cpp.o -c /home/zoe/webServer/main.cpp
+CMakeFiles/output.dir/TEST.cpp.o: CMakeFiles/output.dir/flags.make
+CMakeFiles/output.dir/TEST.cpp.o: /home/zoe/webServer/TEST.cpp
+CMakeFiles/output.dir/TEST.cpp.o: CMakeFiles/output.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zoe/webServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/output.dir/TEST.cpp.o"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/TEST.cpp.o -MF CMakeFiles/output.dir/TEST.cpp.o.d -o CMakeFiles/output.dir/TEST.cpp.o -c /home/zoe/webServer/TEST.cpp
 
-CMakeFiles/output.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/output.dir/main.cpp.i"
-	/usr/sbin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zoe/webServer/main.cpp > CMakeFiles/output.dir/main.cpp.i
+CMakeFiles/output.dir/TEST.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/output.dir/TEST.cpp.i"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zoe/webServer/TEST.cpp > CMakeFiles/output.dir/TEST.cpp.i
 
-CMakeFiles/output.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/output.dir/main.cpp.s"
-	/usr/sbin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zoe/webServer/main.cpp -o CMakeFiles/output.dir/main.cpp.s
+CMakeFiles/output.dir/TEST.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/output.dir/TEST.cpp.s"
+	/usr/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zoe/webServer/TEST.cpp -o CMakeFiles/output.dir/TEST.cpp.s
 
 # Object files for target output
 output_OBJECTS = \
-"CMakeFiles/output.dir/main.cpp.o"
+"CMakeFiles/output.dir/TEST.cpp.o"
 
 # External object files for target output
 output_EXTERNAL_OBJECTS =
 
-output: CMakeFiles/output.dir/main.cpp.o
+output: CMakeFiles/output.dir/TEST.cpp.o
 output: CMakeFiles/output.dir/build.make
 output: /usr/lib/libboost_unit_test_framework.so.1.83.0
 output: /home/zoe/webServer/lib/libwebserver.so

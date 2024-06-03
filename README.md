@@ -67,5 +67,9 @@
 ## v0.7
 
   mariadb:新增数据库模块集成后端数据库连接(mariadb-connector-c++)
-  
+  新增database库:
+    对数据库连接进行封装,新增Update Insert Select Delete,Describe对基础操作进行封装(增删改查)
+    对查询结果进行封装Result，title(),result()可对结果进行格式化输出
+    优化Result内部资源移动操作，关于如何不用繁杂的数据结构存储查询对象思考待定...
+    
   

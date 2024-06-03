@@ -191,29 +191,29 @@ database/fast:
 	$(MAKE) $(MAKESILENT) -f include/database/CMakeFiles/database.dir/build.make include/database/CMakeFiles/database.dir/build
 .PHONY : database/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+TEST.o: TEST.cpp.o
+.PHONY : TEST.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/main.cpp.o
-.PHONY : main.cpp.o
+TEST.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/TEST.cpp.o
+.PHONY : TEST.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+TEST.i: TEST.cpp.i
+.PHONY : TEST.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/main.cpp.i
-.PHONY : main.cpp.i
+TEST.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/TEST.cpp.i
+.PHONY : TEST.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+TEST.s: TEST.cpp.s
+.PHONY : TEST.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/main.cpp.s
-.PHONY : main.cpp.s
+TEST.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/output.dir/build.make CMakeFiles/output.dir/TEST.cpp.s
+.PHONY : TEST.cpp.s
 
 # Help Target
 help:
@@ -229,9 +229,9 @@ help:
 	@echo "... database"
 	@echo "... output"
 	@echo "... webserver"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... TEST.o"
+	@echo "... TEST.i"
+	@echo "... TEST.s"
 .PHONY : help
 
 
